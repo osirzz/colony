@@ -1,0 +1,2080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<title>Colony — IBS &amp; FODMAP Tracker</title>
+<meta name="description" content="Track food triggers, symptoms and a ready-to-use FODMAP food guide for IBS.">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Colony">
+<meta name="theme-color" content="#0f766e">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" href="data:image/png;base64,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">
+
+<style>
+  :root{
+    --bg:#f9f9f7; --surface:#fcfcfb; --surface-alt:#f2f1ec;
+    --text:#0b0b0b; --text-secondary:#52514e; --text-muted:#898781;
+    --border: rgba(11,11,11,0.10); --grid:#e1e0d9;
+    --brand:#0f766e; --brand-strong:#0b5c56; --brand-tint: rgba(15,118,110,0.10);
+    --good:#0ca30c; --warning:#fab219; --critical:#d03b3b;
+    --good-tint: rgba(12,163,12,0.12); --warning-tint: rgba(250,178,25,0.18); --critical-tint: rgba(208,59,59,0.12);
+    --chart-series:#2a78d6; --chart-series-tint: rgba(42,120,214,0.12);
+    --radius:16px; --radius-sm:10px;
+    --shadow: 0 1px 2px rgba(11,11,11,0.06), 0 6px 16px rgba(11,11,11,0.05);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:where(:not([data-theme="light"])){
+      --bg:#0d0d0d; --surface:#1a1a19; --surface-alt:#222220;
+      --text:#ffffff; --text-secondary:#c3c2b7; --text-muted:#8f8d86;
+      --border: rgba(255,255,255,0.12); --grid:#2c2c2a;
+      --brand:#2dd4bf; --brand-strong:#5eead4; --brand-tint: rgba(45,212,191,0.16);
+      --good:#0ca30c; --warning:#fab219; --critical:#e66767;
+      --good-tint: rgba(12,163,12,0.20); --warning-tint: rgba(250,178,25,0.22); --critical-tint: rgba(230,103,103,0.20);
+      --chart-series:#3987e5; --chart-series-tint: rgba(57,135,229,0.18);
+      --shadow: 0 1px 2px rgba(0,0,0,0.5), 0 8px 20px rgba(0,0,0,0.35);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0d0d0d; --surface:#1a1a19; --surface-alt:#222220;
+    --text:#ffffff; --text-secondary:#c3c2b7; --text-muted:#8f8d86;
+    --border: rgba(255,255,255,0.12); --grid:#2c2c2a;
+    --brand:#2dd4bf; --brand-strong:#5eead4; --brand-tint: rgba(45,212,191,0.16);
+    --good:#0ca30c; --warning:#fab219; --critical:#e66767;
+    --good-tint: rgba(12,163,12,0.20); --warning-tint: rgba(250,178,25,0.22); --critical-tint: rgba(230,103,103,0.20);
+    --chart-series:#3987e5; --chart-series-tint: rgba(57,135,229,0.18);
+    --shadow: 0 1px 2px rgba(0,0,0,0.5), 0 8px 20px rgba(0,0,0,0.35);
+    color-scheme: dark;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing:antialiased;
+    padding-top:env(safe-area-inset-top);
+    overscroll-behavior-y:none;
+  }
+  #app{max-width:480px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;position:relative;}
+  a{color:inherit;}
+  button{font-family:inherit;}
+
+  .topbar{
+    position:sticky;top:0;z-index:20;
+    background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(10px);
+    padding:14px 18px 12px;
+    border-bottom:1px solid var(--border);
+  }
+  .topbar-row{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;}
+  .topbar h1{font-size:19px;margin:0;font-weight:700;letter-spacing:-0.01em;}
+  .topbar .sub{font-size:12.5px;color:var(--text-muted);margin-top:2px;}
+  .topbar-actions{display:flex;gap:8px;flex:none;}
+  .lang-switch{
+    flex:none;background:var(--surface-alt);border:1px solid var(--border);color:var(--text-secondary);
+    border-radius:999px;padding:6px 12px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;
+  }
+  .theme-switch{
+    flex:none;background:var(--surface-alt);border:1px solid var(--border);color:var(--text-secondary);
+    border-radius:999px;width:34px;height:34px;padding:0;display:flex;align-items:center;justify-content:center;
+    font-size:15px;line-height:1;cursor:pointer;
+  }
+
+  main{flex:1;padding:14px 16px calc(96px + env(safe-area-inset-bottom));}
+
+  svg{width:20px;height:20px;flex:none;display:inline-block;vertical-align:middle;}
+  .btn svg{width:18px;height:18px;}
+  .quick-btn .ic svg{width:20px;height:20px;}
+  .banner > svg{width:26px;height:26px;flex:none;}
+
+  .card{
+    background:var(--surface);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:16px;
+    margin-bottom:12px;
+  }
+  .card h2{font-size:15px;margin:0 0 10px;font-weight:700;}
+  .muted{color:var(--text-muted);}
+  .secondary{color:var(--text-secondary);}
+  .small{font-size:12.5px;}
+
+  .banner{
+    display:flex;gap:10px;align-items:flex-start;
+    background:var(--brand-tint);
+    border-radius:var(--radius);
+    padding:12px 14px;margin-bottom:12px;font-size:13px;color:var(--text-secondary);
+  }
+  .banner strong{color:var(--text);}
+  .banner button.dismiss{
+    margin-inline-start:auto;background:none;border:none;color:var(--text-muted);
+    font-size:16px;line-height:1;cursor:pointer;padding:2px 4px;
+  }
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .quick-btn{
+    display:flex;flex-direction:column;gap:6px;align-items:flex-start;
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+    padding:14px;cursor:pointer;text-align:start;box-shadow:var(--shadow);
+    color:var(--text);
+  }
+  .quick-btn .ic{color:var(--brand);}
+  .quick-btn b{font-size:13.5px;}
+  .quick-btn span{font-size:11.5px;color:var(--text-muted);}
+
+  .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+  .stat-tile{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 10px;text-align:center;}
+  .stat-tile .val{font-size:22px;font-weight:700;}
+  .stat-tile .lbl{font-size:11px;color:var(--text-muted);margin-top:2px;}
+
+  .stat-strip{display:flex;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px 4px;margin-bottom:12px;}
+  .stat-seg{flex:1;text-align:center;padding:0 6px;}
+  .stat-seg + .stat-seg{border-inline-start:1px solid var(--border);}
+  .stat-seg .ic{display:flex;align-items:center;justify-content:center;margin:0 auto 4px;}
+  .stat-seg .ic svg{width:18px;height:18px;}
+  .stat-seg .val{font-size:20px;font-weight:700;}
+  .stat-seg .lbl{font-size:10.5px;color:var(--text-muted);margin-top:2px;}
+
+  input, select, textarea{
+    width:100%;font-family:inherit;font-size:14.5px;color:var(--text);
+    background:var(--surface-alt); border:1px solid var(--border); border-radius:var(--radius-sm);
+    padding:10px 12px; outline:none;
+  }
+  input:focus, select:focus, textarea:focus{border-color:var(--brand);}
+  label.field-label{display:block;font-size:12.5px;font-weight:600;color:var(--text-secondary);margin:12px 0 6px;}
+  label.field-label:first-child{margin-top:0;}
+
+  .food-chip-input{
+    display:flex;flex-wrap:wrap;align-items:center;gap:6px;
+    width:100%;background:var(--surface-alt);border:1px solid var(--border);border-radius:var(--radius-sm);
+    padding:7px 8px;
+  }
+  .food-chip-input:focus-within{border-color:var(--brand);}
+  .food-chip{
+    display:inline-flex;align-items:center;gap:3px;
+    background:var(--brand-tint);color:var(--brand);
+    border-radius:999px;padding-block:4px;padding-inline:10px 6px;font-size:12.5px;font-weight:600;line-height:1.2;
+  }
+  .food-chip button{background:none;border:none;color:inherit;cursor:pointer;font-size:14px;line-height:1;padding:2px;flex:none;}
+  .food-chip-input input{
+    flex:1;min-width:90px;width:auto;border:none;background:transparent;padding:4px 2px;
+  }
+  .food-chip-input input:focus{border:none;}
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    background:var(--brand); color:#fff; border:none;border-radius:var(--radius-sm);
+    padding:11px 16px;font-size:14px;font-weight:600;cursor:pointer;
+  }
+  .btn:active{background:var(--brand-strong);}
+  .btn.ghost{background:transparent;color:var(--brand);border:1px solid var(--border);}
+  .btn.block{width:100%;}
+  .btn.sm{padding:7px 11px;font-size:12.5px;}
+  .btn.danger{background:var(--critical);}
+  .link-btn{background:none;border:none;color:var(--brand);font-size:12.5px;font-weight:700;cursor:pointer;padding:4px 0;}
+
+  .search-row{display:flex;gap:8px;margin-bottom:10px;}
+  .search-row input{flex:1;}
+
+  .chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;}
+  .chip{
+    border:1px solid var(--border); background:var(--surface-alt); color:var(--text-secondary);
+    border-radius:999px; padding:6px 12px; font-size:12.5px; cursor:pointer; white-space:nowrap;
+  }
+  .chip.active{background:var(--brand); color:#fff; border-color:var(--brand);}
+
+  .badge{
+    display:inline-flex;align-items:center;gap:6px;
+    padding:2px 0;font-size:11.5px;font-weight:700;white-space:nowrap;color:var(--text-secondary);
+  }
+  .badge .dot{width:8px;height:8px;border-radius:50%;flex:none;}
+  .badge.low .dot{background:var(--good);}
+  .badge.mod .dot{background:var(--warning);}
+  .badge.high .dot{background:var(--critical);}
+
+  .food-item{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    padding:11px 4px;border-bottom:1px solid var(--border);
+  }
+  .food-item:last-child{border-bottom:none;}
+  .food-item .name{font-size:14px;font-weight:600;}
+  .food-item .serv{font-size:11.5px;color:var(--text-muted);margin-top:1px;}
+  .f-ic{font-size:19px;flex:none;width:24px;text-align:center;line-height:1;}
+  .f-body{flex:1;min-width:0;}
+  .cat-heading{
+    display:flex;align-items:center;gap:6px;
+    font-size:11px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;
+    color:var(--text-muted);margin:18px 0 4px;padding:0 4px;
+  }
+  .cat-heading:first-child{margin-top:2px;}
+
+  .trigger-card{display:flex;align-items:center;gap:12px;padding:12px;border-radius:var(--radius-sm);margin-bottom:8px;background:var(--surface);box-shadow:var(--shadow);cursor:pointer;}
+  .trigger-card .ic{font-size:20px;flex:none;line-height:1;}
+  .trigger-card .sev-dot{width:10px;height:10px;border-radius:50%;flex:none;}
+  .trigger-card .body{flex:1;min-width:0;}
+  .trigger-card .name{font-size:14px;font-weight:600;}
+  .trigger-card .meta{font-size:11.5px;color:var(--text-muted);}
+  .trigger-card .rm{background:none;border:none;color:var(--text-muted);font-size:18px;cursor:pointer;padding:4px 6px;}
+  .auto-tag{display:inline-block;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.02em;color:var(--brand);background:var(--brand-tint);border-radius:999px;padding:1px 6px;margin-inline-start:4px;vertical-align:middle;}
+
+  .sev-select{display:flex;gap:6px;}
+  .sev-opt{
+    flex:1;text-align:center;padding:9px 4px;border-radius:var(--radius-sm);border:1px solid var(--border);
+    background:var(--surface-alt);font-size:12.5px;font-weight:600;color:var(--text-secondary);cursor:pointer;
+  }
+  .sev-opt.on{background:var(--warning-tint);border-color:var(--warning);color:var(--text);}
+
+  .symptom-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+  .symptom-row .lbl{font-size:13.5px;font-weight:600;}
+  .sev-scale{display:flex;gap:5px;}
+  .sev-btn{width:30px;height:30px;border-radius:50%;border:1px solid var(--border);background:var(--surface-alt);font-size:12px;font-weight:700;color:var(--text-secondary);cursor:pointer;display:flex;align-items:center;justify-content:center;}
+  .sev-btn.on0.on{background:var(--surface-alt);border-color:var(--text-muted);}
+  .sev-btn.on1.on{background:var(--good-tint);border-color:var(--good);}
+  .sev-btn.on2.on{background:var(--warning-tint);border-color:var(--warning);}
+  .sev-btn.on3.on{background:var(--critical-tint);border-color:var(--critical);}
+
+  .entry-card{border-radius:var(--radius);padding:13px 14px;margin-bottom:10px;background:var(--surface);box-shadow:var(--shadow);cursor:pointer;}
+  .entry-card .top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;}
+  .entry-card .time{font-size:11.5px;color:var(--text-muted);font-weight:600;}
+  .entry-card .foods{font-size:14px;font-weight:600;margin:4px 0 6px;unicode-bidi:plaintext;}
+  .entry-card .serv, .entry-card .notes{unicode-bidi:plaintext;}
+  .entry-card .sym-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px;}
+  .sym-chip{font-size:11px;padding:3px 8px;border-radius:999px;background:var(--surface-alt);color:var(--text-secondary);}
+  .sym-chip.hi{background:var(--critical-tint);color:var(--text);}
+  .entry-card .notes{font-size:12.5px;color:var(--text-secondary);margin-top:4px;}
+  .entry-card .del{background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:12px;padding:4px;}
+  .date-group-lbl{font-size:12px;font-weight:700;color:var(--text-muted);margin:16px 0 8px;padding:0 2px;}
+  .date-group-lbl:first-child{margin-top:2px;}
+
+  .empty-state{text-align:center;padding:40px 20px;color:var(--text-muted);}
+  .empty-state svg{width:40px;height:40px;margin-bottom:10px;color:var(--text-muted);}
+  .empty-state p{font-size:13.5px;margin:4px 0 14px;}
+  .empty-inline{text-align:center;padding:22px 10px;color:var(--text-muted);font-size:13px;}
+  .empty-inline .nudge-title{font-weight:700;color:var(--text);font-size:14px;margin-bottom:4px;}
+  .empty-inline .nudge-sub{color:var(--text-muted);font-size:12.5px;}
+
+  /* Today at a glance */
+  .today-glance{
+    display:flex;align-items:center;flex-wrap:wrap;gap:6px;
+    font-size:12.5px;color:var(--text-secondary);font-weight:600;
+    margin:0 2px 12px;
+  }
+  .today-glance .tg-sep{color:var(--text-muted);font-weight:400;}
+  .today-glance .tg-flare{color:var(--critical);}
+  .today-glance .tg-streak{color:var(--brand);}
+
+  /* Weekly shape strip */
+  .week-shape{display:flex;gap:5px;margin:2px 2px 16px;}
+  .week-shape-seg{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;}
+  .week-shape-seg .wd{font-size:9.5px;color:var(--text-muted);font-weight:700;}
+  .week-shape-seg .bar{width:100%;height:8px;border-radius:4px;background:var(--border);}
+  .week-shape-seg.ok .bar{background:var(--good);}
+  .week-shape-seg.flare .bar{background:var(--critical);}
+
+  /* Floating log button */
+  .fab-wrap{
+    position:fixed;left:0;right:0;bottom:calc(66px + env(safe-area-inset-bottom) + 12px);
+    max-width:480px;margin:0 auto;z-index:25;pointer-events:none;
+    display:flex;justify-content:flex-end;padding-inline-end:18px;
+  }
+  .fab{
+    pointer-events:auto;width:52px;height:52px;border-radius:50%;flex:none;
+    background:var(--brand);color:#fff;border:none;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 4px 14px rgba(11,11,11,0.28);cursor:pointer;
+  }
+  .fab svg{width:24px;height:24px;}
+
+  /* Date scroller */
+  .date-scroll-wrap{margin-bottom:12px;}
+  .date-scroll-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;padding:0 2px;}
+  .date-scroll-head .lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--text-muted);}
+  .date-scroll{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 6px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;}
+  .date-pill{
+    scroll-snap-align:center;flex:none;width:50px;display:flex;flex-direction:column;align-items:center;gap:3px;
+    padding:8px 3px 7px;border-radius:14px;border:1px solid var(--border);background:var(--surface);cursor:pointer;
+  }
+  .date-pill .dow{font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:700;}
+  .date-pill .dom{font-size:15px;font-weight:700;}
+  .date-pill .dot{width:6px;height:6px;border-radius:50%;background:var(--chart-series);margin-top:2px;}
+  .date-pill .dot.flare{background:var(--critical);}
+  .date-pill .dot.none{background:transparent;}
+  .date-pill.selected{background:var(--brand);border-color:var(--brand);}
+  .date-pill.selected .dow,.date-pill.selected .dom{color:#fff;}
+  .date-pill.selected .dot{background:#fff;}
+  .date-pill.selected .dot.none{background:transparent;}
+  .week-pill{width:auto;padding:9px 13px 8px;}
+  .week-pill .dow{font-size:11px;white-space:nowrap;}
+  .day-panel-head{display:flex;justify-content:space-between;align-items:baseline;margin:4px 2px 8px;}
+  .day-panel-head h3{font-size:14.5px;margin:0;font-weight:700;}
+
+  /* Chart */
+  .chart-wrap{position:relative;}
+  .bar-row{display:flex;align-items:center;gap:10px;margin-bottom:14px;position:relative;}
+  .bar-row .blabel{width:96px;flex:none;font-size:12px;color:var(--text-secondary);text-align:end;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .bar-track{flex:1;position:relative;height:24px;}
+  .bar-fill{
+    position:absolute;inset-inline-start:0;top:0;height:24px;max-height:24px;
+    background:var(--chart-series); border-radius:4px; min-width:4px;
+    display:flex;align-items:center;
+  }
+  .bar-fill .tip-val{position:absolute;inset-inline-end:-26px;font-size:12px;font-weight:700;color:var(--text);}
+  .bar-fill:focus-visible, .bar-fill:hover{outline:2px solid var(--chart-series);outline-offset:2px;}
+  .chart-tooltip{
+    position:absolute;background:var(--text);color:var(--bg);font-size:11.5px;
+    padding:6px 9px;border-radius:8px;pointer-events:none;white-space:nowrap;
+    transform:translate(-50%,-130%);z-index:5;box-shadow:var(--shadow);
+  }
+  [dir="rtl"] .chart-tooltip{ transform:translate(50%,-130%); }
+  .chart-tooltip b{font-weight:700;}
+
+  /* Tab bar */
+  .tabbar{
+    position:fixed;bottom:0;left:0;right:0;z-index:30;
+    max-width:480px;margin:0 auto;
+    display:flex;justify-content:space-around;
+    background:color-mix(in srgb, var(--surface) 92%, transparent);
+    backdrop-filter:blur(14px);
+    border-top:1px solid var(--border);
+    padding:8px 4px calc(8px + env(safe-area-inset-bottom));
+  }
+  .tab-btn{
+    background:none;border:none;display:flex;flex-direction:column;align-items:center;gap:3px;
+    color:var(--text-muted);font-size:10.5px;font-weight:600;padding:4px 8px;cursor:pointer;flex:1;
+  }
+  .tab-btn svg{width:22px;height:22px;}
+  .tab-btn.active{color:var(--brand);}
+
+  .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:40;display:flex;align-items:flex-end;justify-content:center;}
+  .modal-sheet{
+    background:var(--surface);width:100%;max-width:480px;border-radius:20px 20px 0 0;
+    padding:18px 18px calc(18px + env(safe-area-inset-bottom));max-height:88vh;overflow-y:auto;
+    display:flex;flex-direction:column;
+  }
+  .modal-sheet h2{margin:0 0 4px;font-size:17px;}
+  .modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
+  .modal-head button{background:none;border:none;color:var(--text-muted);font-size:22px;line-height:1;cursor:pointer;}
+  .fodmap-list{overflow-y:auto;flex:1;}
+  .fodmap-list-inline{max-height:420px;overflow-y:auto;}
+  .fodmap-row{display:flex;align-items:center;gap:10px;padding:9px 2px;border-bottom:1px solid var(--border);}
+  .fodmap-row .info{flex:1;min-width:0;}
+  .fodmap-row .info .name{font-size:13px;font-weight:600;}
+  .fodmap-row .info .lvl{display:flex;align-items:center;gap:5px;font-size:10.5px;color:var(--text-muted);margin-top:2px;}
+  .fodmap-row .info .lvl .dot{width:7px;height:7px;border-radius:50%;flex:none;}
+  .fodmap-row .info .lvl-low .dot{background:var(--good);}
+  .fodmap-row .info .lvl-mod .dot{background:var(--warning);}
+  .fodmap-row .info .lvl-high .dot{background:var(--critical);}
+
+  .fm-tile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px;}
+  .fm-tile{
+    position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+    background:var(--surface-alt);border:1px solid var(--border);border-radius:var(--radius-sm);
+    padding:12px 6px 9px;text-align:center;cursor:pointer;min-height:86px;color:var(--text);
+  }
+  .fm-tile.added{background:var(--brand-tint);border-color:var(--brand);}
+  .fm-tile-ic{font-size:20px;line-height:1;}
+  .fm-tile-name{font-size:10.5px;font-weight:600;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+  .fm-tile-lvl{display:inline-flex;align-items:center;gap:3px;font-size:9px;font-weight:700;letter-spacing:.01em;}
+  .fm-tile-lvl .fm-tile-dot{width:6px;height:6px;border-radius:50%;flex:none;}
+  .fm-tile.lvl-low .fm-tile-lvl{color:var(--good);}
+  .fm-tile.lvl-mod .fm-tile-lvl{color:var(--warning-text,var(--warning));}
+  .fm-tile.lvl-high .fm-tile-lvl{color:var(--critical);}
+  .fm-tile.lvl-low .fm-tile-dot{background:var(--good);}
+  .fm-tile.lvl-mod .fm-tile-dot{background:var(--warning);}
+  .fm-tile.lvl-high .fm-tile-dot{background:var(--critical);}
+  .fm-tile-check{position:absolute;top:4px;inset-inline-end:4px;color:var(--brand);}
+  .fm-tile-check svg{width:13px;height:13px;}
+  .fm-more-hint{font-size:11px;color:var(--text-muted);text-align:center;padding:2px 0 10px;}
+
+  .trigger-tile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px;}
+  .trigger-tile{
+    position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;
+    background:var(--surface);box-shadow:var(--shadow);border-radius:var(--radius-sm);
+    padding:16px 6px 10px;text-align:center;cursor:pointer;min-height:96px;
+  }
+  .trigger-tile .ic{font-size:20px;line-height:1;}
+  .trigger-tile .name{font-size:11px;font-weight:600;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+  .trigger-tile .sev-lbl{display:inline-flex;align-items:center;gap:3px;font-size:9px;font-weight:700;letter-spacing:.01em;}
+  .trigger-tile .sev-dot{width:8px;height:8px;border-radius:50%;flex:none;}
+  .trigger-tile .stat-lbl{font-size:8.5px;color:var(--text-muted);line-height:1.15;}
+  .tile-rm{position:absolute;top:2px;inset-inline-end:2px;background:none;border:none;color:var(--text-muted);font-size:15px;cursor:pointer;padding:4px;line-height:1;}
+  .tile-auto{position:absolute;top:5px;inset-inline-start:5px;font-size:8px;padding:1px 5px;margin:0;}
+  .add-btn{
+    flex:none;display:inline-flex;align-items:center;gap:3px;
+    border:1px solid var(--brand);color:var(--brand);background:transparent;border-radius:999px;
+    padding:5px 9px;font-size:10.5px;font-weight:700;cursor:pointer;
+  }
+  .add-btn svg{width:11px;height:11px;}
+  .add-btn.added{background:var(--brand);color:#fff;}
+
+  /* FODMAP accordion */
+  .fm-cat{border-bottom:1px solid var(--border);}
+  .fm-cat:last-child{border-bottom:none;}
+  .fm-cat-head{
+    width:100%;display:flex;align-items:center;justify-content:space-between;
+    background:none;border:none;padding:12px 2px;cursor:pointer;color:var(--text);text-align:start;
+  }
+  .fm-cat-left{display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:700;}
+  .fm-cat-icon{font-size:17px;line-height:1;}
+  .fm-cat-right{display:flex;align-items:center;gap:8px;}
+  .fm-cat-count{font-size:11px;color:var(--text-muted);font-weight:600;}
+  .chevron{width:15px;height:15px;color:var(--text-muted);}
+  .chevron.open{transform:rotate(90deg);}
+  .fm-cat-body{padding-bottom:2px;}
+
+  #toast{
+    position:fixed;bottom:calc(90px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);
+    background:var(--text);color:var(--bg);padding:9px 10px 9px 16px;border-radius:999px;font-size:12.5px;font-weight:600;
+    z-index:60;opacity:0;pointer-events:none;transition:opacity .25s ease, transform .25s ease;
+    max-width:88%;display:flex;align-items:center;gap:10px;justify-content:center;
+  }
+  #toast.show{opacity:1;transform:translateX(-50%) translateY(-4px);pointer-events:auto;}
+  .toast-undo{flex:none;background:none;border:1px solid var(--bg);color:var(--bg);border-radius:999px;padding:4px 10px;font-size:11.5px;font-weight:700;cursor:pointer;}
+
+  ::-webkit-scrollbar{width:0;height:0;}
+
+  /* Light, quick animations */
+  @media (prefers-reduced-motion: no-preference){
+    @keyframes viewIn{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);} }
+    .view-anim{ animation: viewIn .28s cubic-bezier(.2,.8,.2,1) both; }
+
+    @keyframes fadeIn{ from{opacity:0;} to{opacity:1;} }
+    @keyframes sheetUp{ from{opacity:.4; transform:translateY(28px);} to{opacity:1; transform:translateY(0);} }
+    .modal-backdrop{ animation: fadeIn .18s ease both; }
+    .modal-sheet{ animation: sheetUp .24s cubic-bezier(.2,.8,.2,1) both; }
+
+    .btn, .chip, .quick-btn, .date-pill, .add-btn, .tab-btn, .sev-opt, .sev-btn,
+    .theme-switch, .lang-switch, .fm-cat-head, .stat-tile, .fm-tile, .trigger-tile, .trigger-card, .entry-card, .fab{
+      transition: transform .15s ease, background-color .15s ease, border-color .15s ease, color .15s ease;
+    }
+    .btn:active, .chip:active, .quick-btn:active, .date-pill:active, .add-btn:active,
+    .sev-opt:active, .sev-btn:active, .theme-switch:active, .lang-switch:active,
+    .fm-tile:active, .trigger-tile:active, .trigger-card:active, .entry-card:active, .fab:active{
+      transform: scale(0.95);
+    }
+    .bar-fill{ transition: width .6s cubic-bezier(.2,.8,.2,1); }
+    .fm-cat-body{ animation: viewIn .2s ease both; }
+    .chevron{ transition: transform .2s ease; }
+  }
+</style>
+</head>
+<body>
+<div id="app">
+  <div class="topbar">
+    <div class="topbar-row">
+      <div>
+        <h1 id="view-title">Colony</h1>
+        <div class="sub" id="view-sub">Your daily food &amp; symptom tracker</div>
+      </div>
+      <div class="topbar-actions">
+        <button class="theme-switch" id="theme-toggle" aria-label="Toggle color theme">🌗</button>
+        <button class="lang-switch" id="lang-toggle">العربية</button>
+      </div>
+    </div>
+  </div>
+  <main id="view-root"></main>
+  <nav class="tabbar" id="tabbar"></nav>
+</div>
+<div id="toast"></div>
+<div id="modal-root"></div>
+<div class="fab-wrap" id="home-fab-wrap" style="display:none;">
+  <button class="fab" id="home-fab" aria-label="Log a trigger"></button>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------------------------------------------------------------
+   ICONS
+--------------------------------------------------------------- */
+const ICON = {
+  home:  '<path d="M3 11.5 12 4l9 7.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 10v9.5a1 1 0 0 0 1 1H10v-6h4v6h3.5a1 1 0 0 0 1-1V10" stroke-linecap="round" stroke-linejoin="round"/>',
+  guide: '<path d="M4.5 5.2C4.5 4 5.5 3 6.8 3H19v16H6.8c-1.3 0-2.3 1-2.3 2.2V5.2Z" stroke-linejoin="round"/><path d="M17 3v16" /><path d="M8 7.5h5M8 10.5h5" stroke-linecap="round"/>',
+  target:'<circle cx="12" cy="12" r="8.2"/><circle cx="12" cy="12" r="4.6"/><circle cx="12" cy="12" r="1.1" fill="currentColor" stroke="none"/>',
+  diary: '<rect x="5" y="4.5" width="14" height="17" rx="2.4"/><path d="M9 4.5V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1.5" stroke-linecap="round"/><path d="M12 11v6M9 14h6" stroke-linecap="round"/>',
+  insights:'<path d="M4 20V11M10 20V4M16 20v-7" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.5 20.5h19" stroke-linecap="round"/>',
+  check: '<circle cx="12" cy="12" r="9.5"/><path d="M7.5 12.5l3 3 6-6.5" stroke-linecap="round" stroke-linejoin="round"/>',
+  warn:  '<path d="M12 3.5 22 20.5H2L12 3.5Z" stroke-linejoin="round"/><path d="M12 9.5v5" stroke-linecap="round"/><circle cx="12" cy="17.3" r="0.9" fill="currentColor" stroke="none"/>',
+  cross: '<circle cx="12" cy="12" r="9.5"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke-linecap="round"/>',
+  plus:  '<path d="M12 5v14M5 12h14" stroke-linecap="round"/>',
+  search:'<circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-5.2-5.2" stroke-linecap="round"/>',
+  empty: '<circle cx="12" cy="12" r="9"/><path d="M8 15c1.2 1 2.6 1.5 4 1.5s2.8-.5 4-1.5" stroke-linecap="round"/><path d="M9 9.5h.01M15 9.5h.01" stroke-linecap="round" stroke-width="2.4"/>',
+  chevron: '<path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/>'
+};
+function svg(name, cls){
+  return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="'+(cls||'')+'">'+ICON[name]+'</svg>';
+}
+
+/* ---------------------------------------------------------------
+   I18N
+--------------------------------------------------------------- */
+const I18N = { en:{
+  tab_home:"Home", tab_guide:"Guide", tab_triggers:"Triggers", tab_diary:"Diary", tab_insights:"Insights",
+  title_home:"Colony", sub_home:"Your daily food & symptom tracker",
+  title_guide:"FODMAP Guide", sub_guide:"Ready-to-use low / moderate / high reference",
+  title_triggers:"My Triggers", sub_triggers:"Foods, drinks & other things you're tracking",
+  title_diary:"Food & Symptom Diary", sub_diary:"Log meals and how you felt",
+  title_insights:"Insights", sub_insights:"Patterns between food and symptoms",
+  install_title:"Add to your Home Screen.",
+  install_body:"Tap the Share icon in Safari, then “Add to Home Screen” — Colony opens like a normal app, and your data stays on this device.",
+  disclaimer:"This app gives general FODMAP reference information and personal symptom tracking. It is not medical advice and does not diagnose or treat IBS. Introduce dietary changes with a doctor or dietitian, especially before eliminating whole food groups.",
+  stat_entries:"Diary entries", stat_today:"Logged today", stat_triggers:"Tracked triggers",
+  stat_total:"Total entries", stat_flareups:"Flare-ups logged",
+  quick_actions:"Quick actions",
+  qa_log:"Log a meal", qa_log_sub:"Add food + symptoms",
+  qa_guide:"FODMAP Guide", qa_guide_sub:"Look up a food",
+  qa_triggers:"My Triggers", qa_triggers_sub:"Manage your list",
+  qa_insights:"Insights", qa_insights_sub:"See your patterns",
+  top_trigger:"Your top tracked trigger", severity_label:"Severity",
+  get_started:"Get started",
+  get_started_body:"Add a few foods or things you suspect trigger symptoms — start with the quick list on the Triggers tab — then log meals right here on Home. After a few entries, Insights will start showing patterns.",
+  get_started_btn:"Add my first trigger",
+  search_placeholder:"Search foods (e.g. cheese, apple)…",
+  filter_all:"All levels", filter_low:"Low FODMAP", filter_mod:"Moderate", filter_high:"High FODMAP",
+  filter_all_cat:"All categories",
+  guide_empty_title:"No foods match your search.", guide_empty_sub:"Try a different term or clear the filters.",
+  guide_footnote:"FODMAP status often depends on serving size. For precise, up-to-date values always check the official Monash University FODMAP app.",
+  quick_add_common:"Quick add common triggers",
+  nonfood_heading:"Non-food triggers",
+  fodmap_list_heading:"Add from the full FODMAP list",
+  fodmap_list_sub:"Browse every food in the guide and add it straight to your triggers.",
+  browse_btn:"Browse & add foods",
+  fodmap_modal_title:"Add from FODMAP list",
+  add_label:"Add", added_label:"Added",
+  custom_heading:"Add a custom trigger (food, drink, or any trigger)",
+  field_food:"Food, drink, or trigger", food_placeholder:"e.g. Fried food, Stress, Travel",
+  field_severity:"How severe are your symptoms?",
+  sev_mild:"Mild", sev_moderate:"Moderate", sev_severe:"Severe",
+  field_notes:"Notes (optional)", notes_placeholder:"e.g. only in large amounts",
+  btn_add_trigger:"Add trigger", tracked_heading:"Tracked",
+  triggers_empty_title:"No triggers yet", triggers_empty_sub:"Tap a quick-add chip above, or add your own.",
+  toast_added:"Trigger added", toast_removed:"Removed", toast_dup:"Already tracking that one",
+  jump_to_day:"Jump to a day", show_all_days:"Show full history", back_to_day:"Back to day view",
+  btn_log_entry:"Log a trigger",
+  field_date:"Date", field_time:"Time", field_meal:"Meal",
+  field_foods:"Foods eaten", foods_placeholder:"Type a food, press enter…",
+  symptoms_heading:"Symptoms (0 = none, 3 = severe)",
+  btn_save_entry:"Save entry", toast_saved:"Entry saved", toast_updated:"Entry updated", no_symptoms:"No symptoms logged",
+  today:"Today", yesterday:"Yesterday",
+  diary_empty_title:"No entries yet", diary_empty_sub:"Log your first meal to start tracking patterns.",
+  day_empty:"No entries logged for this day.",
+  btn_delete:"Delete",
+  insights_scarce_title:"Not enough data yet",
+  insights_scarce_sub:"Log at least 3 diary entries to start seeing patterns between foods and symptoms.",
+  insights_noflare_title:"No flare-ups linked to a food yet",
+  insights_noflare_sub:"Keep logging — once a symptom (level 2+) follows a food, a pattern will appear here.",
+  chart_title:"Foods most often logged with a flare-up",
+  chart_sub:"Times a food appeared in an entry where a symptom was rated 2 or higher.",
+  chart_footnote:"Tap or hover a bar for details. This shows correlation, not proof of cause — discuss patterns with a doctor or dietitian before cutting out foods.",
+  tooltip_logs:"of logs with a flare-up",
+  filter_daily:"Daily", filter_weekly:"Weekly",
+  disclaimer_link:"About & disclaimer", disclaimer_title:"About Colony",
+  field_amount:"Amount / portion (optional)", amount_placeholder:"e.g. small bowl, 250ml",
+  more_options:"More options (date, time, meal, notes)",
+  toast_autoadded:"Entry saved — added to Triggers: {list}",
+  auto_added_note:"Auto-added — logged with a symptom flare-up",
+  undo:"Undo", auto_tag:"Auto",
+  logged_tpl:"Logged {n}×", flare_tpl:"{n} flare-ups",
+  sort_severity:"By severity", sort_recent:"Recent",
+  group_food:"Food & Drink", group_nonfood:"Non-food & Other",
+  btn_save:"Save changes",
+  suggested_heading:"Suggested from your diary",
+  view_tiles:"Tiles", view_list:"List",
+  fm_more_hint:"+{n} more — search to find them",
+  edit_entry_title:"Edit entry",
+  glance_logged_tpl:"{n} logged today", glance_empty_today:"No entries yet today",
+  glance_streak_tpl:"{n}-day streak",
+  today_nudge_title:"Haven't logged today yet",
+  today_nudge_sub:"Takes about 10 seconds — food, symptoms, done.",
+  today_nudge_cta:"Log now",
+  lang_toggle:"العربية"
+}, ar:{
+  tab_home:"الرئيسية", tab_guide:"الدليل", tab_triggers:"المحفزات", tab_diary:"اليوميات", tab_insights:"التحليلات",
+  title_home:"قولوني", sub_home:"سجل متابعة الطعام والأعراض اليومي",
+  title_guide:"دليل الفودماب", sub_guide:"مرجع جاهز للاستخدام: منخفض / متوسط / مرتفع",
+  title_triggers:"محفزاتي", sub_triggers:"الأطعمة والمشروبات وأشياء أخرى تتابعها",
+  title_diary:"يوميات الطعام والأعراض", sub_diary:"سجّل وجباتك وكيف شعرت",
+  title_insights:"التحليلات", sub_insights:"الأنماط بين الطعام والأعراض",
+  install_title:"أضِف التطبيق إلى الشاشة الرئيسية",
+  install_body:"اضغط على أيقونة المشاركة في سفاري، ثم «إضافة إلى الشاشة الرئيسية» — سيفتح التطبيق كأي تطبيق عادي، وتبقى بياناتك على جهازك فقط.",
+  disclaimer:"يقدّم هذا التطبيق معلومات مرجعية عامة عن الفودماب وتتبعًا شخصيًا للأعراض. وهو ليس استشارة طبية ولا يشخّص أو يعالج القولون العصبي. استشر طبيبًا أو أخصائي تغذية قبل إجراء تغييرات غذائية، خصوصًا قبل استبعاد مجموعات غذائية كاملة.",
+  stat_entries:"سجلات اليوميات", stat_today:"مسجَّل اليوم", stat_triggers:"المحفزات المتابَعة",
+  stat_total:"إجمالي السجلات", stat_flareups:"نوبات مسجَّلة",
+  quick_actions:"إجراءات سريعة",
+  qa_log:"سجّل وجبة", qa_log_sub:"أضف الطعام والأعراض",
+  qa_guide:"دليل الفودماب", qa_guide_sub:"ابحث عن طعام",
+  qa_triggers:"محفزاتي", qa_triggers_sub:"إدارة قائمتك",
+  qa_insights:"التحليلات", qa_insights_sub:"شاهد أنماطك",
+  top_trigger:"أبرز محفز تتابعه", severity_label:"الشدة",
+  get_started:"ابدأ الآن",
+  get_started_body:"أضف بعض الأطعمة أو الأشياء التي تشك أنها تسبب الأعراض — ابدأ بالقائمة السريعة في تبويب المحفزات — ثم سجّل وجباتك هنا في الرئيسية. بعد عدة سجلات، ستبدأ التحليلات بإظهار الأنماط.",
+  get_started_btn:"أضف أول محفز",
+  search_placeholder:"ابحث عن طعام (مثال: جبن، تفاح)…",
+  filter_all:"كل المستويات", filter_low:"منخفض الفودماب", filter_mod:"متوسط", filter_high:"مرتفع الفودماب",
+  filter_all_cat:"كل الفئات",
+  guide_empty_title:"لا توجد أطعمة مطابقة لبحثك.", guide_empty_sub:"جرّب كلمة أخرى أو امسح الفلاتر.",
+  guide_footnote:"مستوى الفودماب غالبًا يعتمد على حجم الحصة. للحصول على قيم دقيقة ومحدّثة راجع دائمًا تطبيق جامعة موناش الرسمي للفودماب.",
+  quick_add_common:"إضافة سريعة للمحفزات الشائعة",
+  nonfood_heading:"محفزات غير غذائية",
+  fodmap_list_heading:"إضافة من قائمة الفودماب الكاملة",
+  fodmap_list_sub:"تصفّح جميع أطعمة الدليل وأضفها مباشرة إلى محفزاتك.",
+  browse_btn:"تصفّح وأضف أطعمة",
+  fodmap_modal_title:"إضافة من قائمة الفودماب",
+  add_label:"إضافة", added_label:"أُضيف",
+  custom_heading:"أضف محفزًا مخصصًا (طعام، مشروب، أو أي محفز)",
+  field_food:"طعام أو مشروب أو محفز", food_placeholder:"مثال: طعام مقلي، توتر، سفر",
+  field_severity:"ما مدى شدة أعراضك؟",
+  sev_mild:"خفيف", sev_moderate:"متوسط", sev_severe:"شديد",
+  field_notes:"ملاحظات (اختياري)", notes_placeholder:"مثال: فقط بكميات كبيرة",
+  btn_add_trigger:"أضف المحفز", tracked_heading:"المتابَع",
+  triggers_empty_title:"لا توجد محفزات بعد", triggers_empty_sub:"اضغط على أحد الخيارات السريعة أعلاه، أو أضف محفزك الخاص.",
+  toast_added:"تمت إضافة المحفز", toast_removed:"تمت الإزالة", toast_dup:"هذا المحفز مُتابَع بالفعل",
+  jump_to_day:"انتقل إلى يوم", show_all_days:"عرض السجل الكامل", back_to_day:"العودة لعرض اليوم",
+  btn_log_entry:"سجّل محفزًا",
+  field_date:"التاريخ", field_time:"الوقت", field_meal:"الوجبة",
+  field_foods:"الأطعمة المُتناولة", foods_placeholder:"اكتب طعامًا واضغط إدخال…",
+  symptoms_heading:"الأعراض (0 = لا يوجد، 3 = شديد)",
+  btn_save_entry:"حفظ السجل", toast_saved:"تم حفظ السجل", toast_updated:"تم تحديث السجل", no_symptoms:"لا توجد أعراض مسجّلة",
+  today:"اليوم", yesterday:"أمس",
+  diary_empty_title:"لا توجد سجلات بعد", diary_empty_sub:"سجّل وجبتك الأولى لبدء تتبع الأنماط.",
+  day_empty:"لا توجد سجلات لهذا اليوم.",
+  btn_delete:"حذف",
+  insights_scarce_title:"لا توجد بيانات كافية بعد",
+  insights_scarce_sub:"سجّل 3 مدخلات على الأقل في اليوميات لبدء رؤية الأنماط بين الطعام والأعراض.",
+  insights_noflare_title:"لا توجد نوبات مرتبطة بطعام بعد",
+  insights_noflare_sub:"استمر بالتسجيل — بمجرد ظهور عرَض (مستوى 2 فأعلى) بعد طعام معيّن سيظهر النمط هنا.",
+  chart_title:"الأطعمة الأكثر ارتباطًا بنوبة أعراض",
+  chart_sub:"عدد مرات ظهور الطعام في سجل تم فيه تقييم عرَض بمستوى 2 أو أعلى.",
+  chart_footnote:"اضغط أو مرّر فوق العمود لمزيد من التفاصيل. هذا يوضّح ارتباطًا وليس إثباتًا للسبب — ناقش الأنماط مع طبيب أو أخصائي تغذية قبل استبعاد أي طعام.",
+  tooltip_logs:"من السجلات فيها نوبة أعراض",
+  filter_daily:"يومي", filter_weekly:"أسبوعي",
+  disclaimer_link:"حول التطبيق وإخلاء المسؤولية", disclaimer_title:"حول قولوني",
+  field_amount:"الكمية / الحصة (اختياري)", amount_placeholder:"مثال: طبق صغير، 250 مل",
+  more_options:"خيارات إضافية (التاريخ، الوقت، الوجبة، ملاحظات)",
+  toast_autoadded:"تم حفظ السجل — أُضيف إلى المحفزات: {list}",
+  auto_added_note:"أُضيف تلقائيًا — سُجّل مع نوبة أعراض",
+  undo:"تراجع", auto_tag:"تلقائي",
+  logged_tpl:"سُجّل {n} مرة", flare_tpl:"{n} نوبة أعراض",
+  sort_severity:"حسب الشدة", sort_recent:"الأحدث",
+  group_food:"الطعام والشراب", group_nonfood:"غير غذائي وأخرى",
+  btn_save:"حفظ التغييرات",
+  suggested_heading:"مقترح من يومياتك",
+  view_tiles:"بطاقات", view_list:"قائمة",
+  fm_more_hint:"+{n} أخرى — استخدم البحث لإيجادها",
+  edit_entry_title:"تعديل الإدخال",
+  glance_logged_tpl:"سُجِّل {n} اليوم", glance_empty_today:"لا توجد إدخالات اليوم بعد",
+  glance_streak_tpl:"سلسلة {n} يوم",
+  today_nudge_title:"لم تسجّل اليوم بعد",
+  today_nudge_sub:"يستغرق حوالي 10 ثوانٍ - طعام، أعراض، وانتهى.",
+  today_nudge_cta:"سجّل الآن",
+  lang_toggle:"English"
+}};
+function t(key){ return (I18N[state.lang] && I18N[state.lang][key]) || I18N.en[key] || key; }
+
+const SYMPTOM_LABELS = {
+  en:{Bloating:"Bloating","Abdominal pain":"Abdominal pain",Gas:"Gas",Diarrhea:"Diarrhea",Constipation:"Constipation"},
+  ar:{Bloating:"انتفاخ","Abdominal pain":"ألم في البطن",Gas:"غازات",Diarrhea:"إسهال",Constipation:"إمساك"}
+};
+const MEAL_LABELS = {
+  en:{Breakfast:"Breakfast",Lunch:"Lunch",Dinner:"Dinner",Snack:"Snack"},
+  ar:{Breakfast:"فطور",Lunch:"غداء",Dinner:"عشاء",Snack:"وجبة خفيفة"}
+};
+function symLabel(k){ return SYMPTOM_LABELS[state.lang][k] || k; }
+function mealLabel(k){ return MEAL_LABELS[state.lang][k] || k; }
+
+/* ---------------------------------------------------------------
+   FODMAP DATABASE (bilingual)
+--------------------------------------------------------------- */
+const CATS = {
+  F:{en:"Fruits", ar:"الفواكه", icon:"🍎"},
+  V:{en:"Vegetables", ar:"الخضروات", icon:"🥦"},
+  D:{en:"Dairy & Alternatives", ar:"الألبان وبدائلها", icon:"🥛"},
+  G:{en:"Grains & Starches", ar:"الحبوب والنشويات", icon:"🌾"},
+  P:{en:"Protein", ar:"البروتين", icon:"🍗"},
+  L:{en:"Legumes", ar:"البقوليات", icon:"🫘"},
+  N:{en:"Nuts, Seeds & Spreads", ar:"المكسرات والبذور", icon:"🥜"},
+  S:{en:"Sweeteners & Condiments", ar:"المُحليات والتوابل", icon:"🍯"},
+  B:{en:"Beverages", ar:"المشروبات", icon:"🥤"}
+};
+function catLabel(k){ return CATS[k][state.lang]; }
+function catIcon(k){ return CATS[k].icon; }
+
+const LVL = {
+  low:{en:"Low FODMAP", ar:"منخفض الفودماب", short_en:"Low", short_ar:"منخفض", icon:"check", cls:"low"},
+  mod:{en:"Moderate — watch portion", ar:"متوسط — انتبه للكمية", short_en:"Moderate", short_ar:"متوسط", icon:"warn", cls:"mod"},
+  high:{en:"High FODMAP", ar:"مرتفع الفودماب", short_en:"High", short_ar:"مرتفع", icon:"cross", cls:"high"}
+};
+function levelLabel(l){ return LVL[l][state.lang]; }
+function levelShort(l){ return state.lang==="ar" ? LVL[l].short_ar : LVL[l].short_en; }
+
+// [name_en, name_ar, category, level, note_en, note_ar]
+const FOODS_RAW = [
+["Banana (firm, unripe)","موز (غير ناضج)","F","low","1 medium","حبة متوسطة"],
+["Blueberries","توت أزرق","F","low","1/4 cup","¼ كوب"],
+["Strawberries","فراولة","F","low","10 medium","10 حبات متوسطة"],
+["Raspberries","توت العليق","F","low","30 berries","30 حبة"],
+["Grapes","عنب","F","low","1 cup","كوب واحد"],
+["Kiwi","كيوي","F","low","2 small","حبتان صغيرتان"],
+["Orange","برتقال","F","low","1 medium","حبة متوسطة"],
+["Clementine","يوسفي (كليمنتين)","F","low","2 small","حبتان صغيرتان"],
+["Pineapple","أناناس","F","low","1 cup fresh","كوب طازج"],
+["Cantaloupe","شمام","F","low","1/2 cup diced","نصف كوب مقطع"],
+["Honeydew melon","شمام عسلي","F","low","1/2 cup diced","نصف كوب مقطع"],
+["Dragon fruit","فاكهة التنين","F","low","1 cup","كوب واحد"],
+["Papaya","بابايا","F","low","1 cup","كوب واحد"],
+["Lemon (juice/zest)","ليمون (عصير/قشر)","F","low","to taste","حسب الرغبة"],
+["Lime (juice/zest)","ليمون أخضر (عصير/قشر)","F","low","to taste","حسب الرغبة"],
+["Passion fruit","فاكهة الباشن","F","low","1 fruit","حبة واحدة"],
+["Rhubarb","الراوند","F","low","1 cup","كوب واحد"],
+["Banana (ripe, large)","موز ناضج (حبة كبيرة)","F","mod","large portion increases fructans","الكمية الكبيرة تزيد الفركتان"],
+["Avocado (small)","أفوكادو (حبة صغيرة)","F","mod","~1/8 avocado","~⅛ حبة أفوكادو"],
+["Pomegranate","رمان","F","mod","small handful","حفنة صغيرة"],
+["Apple","تفاح","F","high","",""],
+["Pear","كمثرى (إجاص)","F","high","",""],
+["Mango","مانجو","F","high","",""],
+["Watermelon","بطيخ","F","high","",""],
+["Cherries","كرز","F","high","",""],
+["Peach","خوخ","F","high","",""],
+["Plum","برقوق","F","high","",""],
+["Nectarine","خوخ أملس (نكتارين)","F","high","",""],
+["Apricot","مشمش","F","high","",""],
+["Fig","تين","F","high","",""],
+["Dates","تمر","F","high","",""],
+["Blackberries","توت العليق الأسود","F","high","",""],
+["Lychee","ليتشي","F","high","",""],
+["Avocado (large serving)","أفوكادو (حصة كبيرة)","F","high","more than 1/4 avocado","أكثر من ¼ حبة أفوكادو"],
+
+["Carrot","جزر","V","low","1 medium","حبة متوسطة"],
+["Cucumber","خيار","V","low","1 cup","كوب واحد"],
+["Zucchini","كوسا","V","low","1 cup","كوب واحد"],
+["Eggplant","باذنجان","V","low","1 cup","كوب واحد"],
+["Bell pepper / capsicum","فلفل رومي (فلفل حلو)","V","low","1 cup","كوب واحد"],
+["Tomato","طماطم","V","low","1 medium","حبة متوسطة"],
+["Spinach","سبانخ","V","low","1 cup","كوب واحد"],
+["Kale","كرنب مجعد (كيل)","V","low","1 cup","كوب واحد"],
+["Arugula / rocket","جرجير","V","low","1 cup","كوب واحد"],
+["Lettuce (romaine/iceberg)","خس","V","low","1 cup","كوب واحد"],
+["Potato","بطاطا","V","low","1 medium","حبة متوسطة"],
+["Green beans","فاصوليا خضراء","V","low","1 cup","كوب واحد"],
+["Bok choy","ملفوف صيني (بوك تشوي)","V","low","1 cup","كوب واحد"],
+["Radish","فجل","V","low","1/2 cup","نصف كوب"],
+["Parsnip","جزر أبيض","V","low","1/2 cup","نصف كوب"],
+["Bean sprouts","براعم الفاصوليا","V","low","1 cup","كوب واحد"],
+["Olives","زيتون","V","low","10","10 حبات"],
+["Ginger","زنجبيل","V","low","to taste","حسب الرغبة"],
+["Turnip","لفت","V","low","1/2 cup","نصف كوب"],
+["Chives (green tops)","ثوم معمر (الجزء الأخضر)","V","low","to taste","حسب الرغبة"],
+["Sweet potato","بطاطا حلوة","V","mod","1/2 cup","نصف كوب"],
+["Pumpkin","يقطين","V","mod","1/4 cup","¼ كوب"],
+["Broccoli (florets only)","بروكلي (الزهيرات فقط)","V","mod","1/2 cup","نصف كوب"],
+["Butternut squash","قرع العسل","V","mod","small serving","حصة صغيرة"],
+["Corn","ذرة","V","mod","1/2 cob","نصف كوز"],
+["Celery","كرفس","V","mod","1 small stalk","عود صغير واحد"],
+["Onion","بصل","V","high","",""],
+["Garlic","ثوم","V","high","",""],
+["Cauliflower","قرنبيط","V","high","",""],
+["Mushrooms","فطر (مشروم)","V","high","",""],
+["Cabbage (large serving)","ملفوف (حصة كبيرة)","V","high","more than 1 cup","أكثر من كوب"],
+["Asparagus","هليون (أسباراغوس)","V","high","",""],
+["Artichoke","خرشوف","V","high","",""],
+["Leek","كراث","V","high","",""],
+["Green peas","بازلاء خضراء","V","high","",""],
+["Snow peas","بازلاء الثلج","V","high","",""],
+["Shallot","بصل شالوت","V","high","",""],
+["Spring onion (white part)","بصل أخضر (الجزء الأبيض)","V","high","",""],
+
+["Lactose-free milk","حليب خالٍ من اللاكتوز","D","low","1 cup","كوب واحد"],
+["Lactose-free yogurt","زبادي خالٍ من اللاكتوز","D","low","170 g","170 غم"],
+["Cheddar cheese","جبنة تشيدر","D","low","hard cheese, naturally low-lactose","جبنة صلبة قليلة اللاكتوز طبيعيًا"],
+["Parmesan cheese","جبنة بارميزان","D","low","",""],
+["Swiss cheese","جبنة سويسرية","D","low","",""],
+["Feta cheese","جبنة فيتا","D","low","40 g","40 غم"],
+["Brie","جبنة بري","D","low","",""],
+["Camembert","جبنة كممبير","D","low","",""],
+["Butter","زبدة","D","low","",""],
+["Ghee","سمن","D","low","",""],
+["Almond milk (unsweetened)","حليب لوز (غير محلى)","D","low","1 cup","كوب واحد"],
+["Rice milk","حليب أرز","D","low","1/2 cup","نصف كوب"],
+["Soy milk (from soy protein)","حليب صويا (من بروتين الصويا)","D","low","1 cup — check label","كوب واحد — تحقق من الملصق"],
+["Coconut milk","حليب جوز الهند","D","low","1/2 cup","نصف كوب"],
+["Coconut milk (large serving)","حليب جوز الهند (حصة كبيرة)","D","mod","more than 1 cup","أكثر من كوب"],
+["Soy milk (from whole soybeans)","حليب صويا (من حبوب الصويا الكاملة)","D","mod","small serving","حصة صغيرة"],
+["Cow's milk","حليب بقري","D","high","",""],
+["Goat / sheep milk","حليب ماعز / غنم","D","high","",""],
+["Regular yogurt","زبادي عادي","D","high","",""],
+["Soft cheese (ricotta, cottage)","جبنة طرية (ريكوتا، قريش)","D","high","",""],
+["Ice cream","آيس كريم","D","high","",""],
+["Condensed milk","حليب مكثف محلى","D","high","",""],
+["Custard","كاسترد","D","high","",""],
+["Buttermilk","لبن الخض","D","high","",""],
+
+["White rice","أرز أبيض","G","low","1 cup cooked","كوب مطبوخ"],
+["Brown rice","أرز بني","G","low","1 cup cooked","كوب مطبوخ"],
+["Quinoa","كينوا","G","low","1 cup cooked","كوب مطبوخ"],
+["Rolled oats","شوفان","G","low","1/2 cup dry","نصف كوب غير مطبوخ"],
+["Gluten-free bread","خبز خالٍ من الغلوتين","G","low","2 slices","شريحتان"],
+["Corn tortillas","تورتيلا ذرة","G","low","2","قطعتان"],
+["Rice noodles","نودلز أرز","G","low","1 cup","كوب واحد"],
+["Polenta / corn grits","بولنتا (جريش الذرة)","G","low","1 cup","كوب واحد"],
+["Buckwheat","حنطة سوداء","G","low","1/2 cup cooked","نصف كوب مطبوخ"],
+["Millet","دخن","G","low","1 cup cooked","كوب مطبوخ"],
+["Sourdough spelt bread","خبز العجين المخمّر من القمح القديم","G","low","2 slices","شريحتان"],
+["Oats (large serving)","شوفان (حصة كبيرة)","G","mod","more than 1 cup cooked","أكثر من كوب مطبوخ"],
+["Wheat bread","خبز القمح","G","high","",""],
+["Wheat pasta","معكرونة القمح","G","high","",""],
+["Rye bread","خبز الجاودار","G","high","",""],
+["Barley","شعير","G","high","",""],
+["Couscous","كسكسي","G","high","",""],
+["Wheat breakfast cereal","حبوب إفطار من القمح","G","high","",""],
+["Semolina","سميد","G","high","",""],
+
+["Chicken (plain)","دجاج (سادة)","P","low","",""],
+["Turkey (plain)","ديك رومي (سادة)","P","low","",""],
+["Beef (plain)","لحم بقري (سادة)","P","low","",""],
+["Pork (plain)","لحم خنزير (سادة)","P","low","",""],
+["Lamb (plain)","لحم غنم (سادة)","P","low","",""],
+["Fish (plain)","سمك (سادة)","P","low","",""],
+["Shrimp / prawns","جمبري (روبيان)","P","low","",""],
+["Eggs","بيض","P","low","",""],
+["Firm tofu","توفو صلب","P","low","3/4 cup","¾ كوب"],
+["Tempeh","تيمبيه","P","low","100 g","100 غم"],
+["Peanut butter","زبدة الفول السوداني","P","mod","2 tbsp","ملعقتان كبيرتان"],
+
+["Canned lentils (rinsed)","عدس معلب (مصفى ومغسول)","L","low","1/2 cup","نصف كوب"],
+["Canned chickpeas (rinsed)","حمص معلب (مصفى ومغسول)","L","low","1/4 cup","¼ كوب"],
+["Canned chickpeas (larger serving)","حمص معلب (حصة أكبر)","L","mod","1/2 cup","نصف كوب"],
+["Kidney beans","فاصوليا حمراء","L","high","",""],
+["Black beans","فاصوليا سوداء","L","high","",""],
+["Split peas","بازلاء مقشورة","L","high","",""],
+["Soybeans","فول الصويا","L","high","",""],
+["Baked beans","فاصوليا مطبوخة بالصلصة","L","high","",""],
+["Boiled lentils (large serving)","عدس مسلوق (حصة كبيرة)","L","high","more than 1/2 cup","أكثر من نصف كوب"],
+["Boiled chickpeas (large serving)","حمص مسلوق (حصة كبيرة)","L","high","more than 1/4 cup","أكثر من ¼ كوب"],
+
+["Walnuts","جوز","N","low","10 halves","10 أنصاف"],
+["Pecans","جوز البيكان","N","low","10 halves","10 أنصاف"],
+["Macadamia nuts","مكاداميا","N","low","20 nuts","20 حبة"],
+["Peanuts","فول سوداني","N","low","small handful","حفنة صغيرة"],
+["Brazil nuts","جوز البرازيل","N","low","10 nuts","10 حبات"],
+["Pumpkin seeds","بذور اليقطين","N","low","2 tbsp","ملعقتان كبيرتان"],
+["Sunflower seeds","بذور دوار الشمس","N","low","2 tbsp","ملعقتان كبيرتان"],
+["Chia seeds","بذور الشيا","N","low","2 tbsp","ملعقتان كبيرتان"],
+["Ground flaxseed","بذور الكتان المطحونة","N","low","1 tbsp","ملعقة كبيرة"],
+["Sesame seeds","سمسم","N","low","1 tbsp","ملعقة كبيرة"],
+["Tahini","طحينة","N","low","1 tbsp","ملعقة كبيرة"],
+["Almonds","لوز","N","mod","10 whole","10 حبات كاملة"],
+["Hazelnuts","بندق","N","mod","small handful","حفنة صغيرة"],
+["Cashews","كاجو","N","high","",""],
+["Pistachios","فستق","N","high","",""],
+
+["Maple syrup","شراب القيقب","S","low","2 tbsp","ملعقتان كبيرتان"],
+["Table sugar (sucrose)","سكر أبيض (سكروز)","S","low","to taste","حسب الرغبة"],
+["Olive oil","زيت زيتون","S","low","",""],
+["Garlic-infused oil","زيت منقوع بالثوم","S","low","garlic flavor, FODMAPs stay in the clove","نكهة الثوم فقط؛ مركبات الفودماب تبقى في الفص"],
+["Mustard","خردل","S","low","",""],
+["Vinegar","خل","S","low","2 tbsp","ملعقتان كبيرتان"],
+["Soy sauce","صلصة الصويا","S","low","2 tbsp","ملعقتان كبيرتان"],
+["Fish sauce","صلصة السمك","S","low","2 tbsp","ملعقتان كبيرتان"],
+["Fresh basil / mint","ريحان / نعناع طازج","S","low","to taste","حسب الرغبة"],
+["Turmeric","كركم","S","low","1 tsp","ملعقة صغيرة"],
+["Salt & black pepper","ملح وفلفل أسود","S","low","to taste","حسب الرغبة"],
+["Honey","عسل","S","high","",""],
+["High-fructose corn syrup","شراب الذرة عالي الفركتوز","S","high","",""],
+["Agave syrup","شراب الأغاف","S","high","",""],
+["Sorbitol (E420)","سوربيتول","S","high","sugar-free gum/mints","علكة أو نعناع خالٍ من السكر"],
+["Mannitol (E421)","مانيتول","S","high","",""],
+["Xylitol","إكسيليتول","S","high","",""],
+["Isomalt","إيزومالت","S","high","",""],
+["Onion powder","بودرة البصل","S","high","",""],
+["Garlic powder","بودرة الثوم","S","high","",""],
+["Chicory root / inulin","جذر الهندباء / الإنولين","S","high","common additive","مادة مضافة شائعة"],
+
+["Water","ماء","B","low","",""],
+["Black coffee","قهوة سوداء","B","low","1 cup","كوب واحد"],
+["Green tea","شاي أخضر","B","low","1 cup","كوب واحد"],
+["Peppermint tea","شاي النعناع","B","low","1 cup","كوب واحد"],
+["Plain sparkling water","ماء فوار سادة","B","low","",""],
+["Wine (dry)","نبيذ (جاف)","B","mod","1 small glass","كأس صغير"],
+["Beer","بيرة","B","mod","1 small glass","كأس صغير"],
+["Soft drinks (HFCS)","مشروبات غازية (تحتوي شراب ذرة عالي الفركتوز)","B","high","",""],
+["Apple juice","عصير تفاح","B","high","",""],
+["Pear juice","عصير كمثرى","B","high","",""],
+["Chai / strong black tea (large)","شاي كرك / شاي أسود قوي (كمية كبيرة)","B","high","more than 1 cup","أكثر من كوب"],
+["Chicory coffee substitute","بديل قهوة الهندباء","B","high","",""],
+["Sugar-free drinks with polyols","مشروبات خالية من السكر تحتوي بوليولات","B","high","",""]
+];
+const FOODS = FOODS_RAW.map(f => ({name:f[0], name_ar:f[1], cat:f[2], level:f[3], note:f[4], note_ar:f[5]}));
+function fname(f){ return state.lang==="ar" ? f.name_ar : f.name; }
+function fnote(f){ return state.lang==="ar" ? f.note_ar : f.note; }
+
+// Food-specific icons — falls back to the category icon when a food has no clean single-emoji match
+const FOOD_ICON = {
+  "Banana (firm, unripe)":"🍌","Blueberries":"🫐","Strawberries":"🍓","Grapes":"🍇","Kiwi":"🥝",
+  "Orange":"🍊","Clementine":"🍊","Pineapple":"🍍","Cantaloupe":"🍈","Honeydew melon":"🍈",
+  "Lemon (juice/zest)":"🍋","Lime (juice/zest)":"🍋","Banana (ripe, large)":"🍌",
+  "Avocado (small)":"🥑","Apple":"🍎","Pear":"🍐","Mango":"🥭","Watermelon":"🍉","Cherries":"🍒",
+  "Peach":"🍑","Avocado (large serving)":"🥑",
+  "Carrot":"🥕","Cucumber":"🥒","Zucchini":"🥒","Eggplant":"🍆","Bell pepper / capsicum":"🫑",
+  "Tomato":"🍅","Spinach":"🥬","Kale":"🥬","Arugula / rocket":"🥬","Lettuce (romaine/iceberg)":"🥬",
+  "Potato":"🥔","Green beans":"🫛","Bok choy":"🥬","Parsnip":"🥕","Bean sprouts":"🌱","Olives":"🫒",
+  "Ginger":"🫚","Chives (green tops)":"🌿","Sweet potato":"🍠","Pumpkin":"🎃",
+  "Broccoli (florets only)":"🥦","Butternut squash":"🎃","Corn":"🌽","Celery":"🥬","Onion":"🧅",
+  "Garlic":"🧄","Mushrooms":"🍄","Cabbage (large serving)":"🥬","Leek":"🧅","Green peas":"🫛",
+  "Snow peas":"🫛","Shallot":"🧅","Spring onion (white part)":"🧅",
+  "Lactose-free milk":"🥛","Lactose-free yogurt":"🥣","Cheddar cheese":"🧀","Parmesan cheese":"🧀",
+  "Swiss cheese":"🧀","Feta cheese":"🧀","Brie":"🧀","Camembert":"🧀","Butter":"🧈","Ghee":"🧈",
+  "Almond milk (unsweetened)":"🥛","Rice milk":"🥛","Soy milk (from soy protein)":"🥛",
+  "Coconut milk":"🥥","Coconut milk (large serving)":"🥥","Soy milk (from whole soybeans)":"🥛",
+  "Cow's milk":"🥛","Goat / sheep milk":"🥛","Regular yogurt":"🥣","Soft cheese (ricotta, cottage)":"🧀",
+  "Ice cream":"🍨","Condensed milk":"🥫","Custard":"🍮","Buttermilk":"🥛",
+  "White rice":"🍚","Brown rice":"🍚","Gluten-free bread":"🍞","Corn tortillas":"🫓",
+  "Rice noodles":"🍜","Polenta / corn grits":"🌽","Sourdough spelt bread":"🍞","Wheat bread":"🍞",
+  "Wheat pasta":"🍝","Rye bread":"🍞","Wheat breakfast cereal":"🥣",
+  "Chicken (plain)":"🍗","Turkey (plain)":"🦃","Beef (plain)":"🥩","Pork (plain)":"🥓",
+  "Lamb (plain)":"🥩","Fish (plain)":"🐟","Shrimp / prawns":"🍤","Eggs":"🥚","Peanut butter":"🥜",
+  "Canned lentils (rinsed)":"🫘","Canned chickpeas (rinsed)":"🫘","Canned chickpeas (larger serving)":"🫘",
+  "Kidney beans":"🫘","Black beans":"🫘","Split peas":"🫛","Soybeans":"🫛","Baked beans":"🫘",
+  "Boiled lentils (large serving)":"🫘","Boiled chickpeas (large serving)":"🫘",
+  "Walnuts":"🥜","Pecans":"🥜","Macadamia nuts":"🥜","Peanuts":"🥜","Brazil nuts":"🥜",
+  "Pumpkin seeds":"🌱","Sunflower seeds":"🌻","Chia seeds":"🌱","Ground flaxseed":"🌱",
+  "Sesame seeds":"🌱","Tahini":"🥜","Almonds":"🥜","Hazelnuts":"🥜","Cashews":"🥜","Pistachios":"🥜",
+  "Maple syrup":"🍁","Olive oil":"🫒","Garlic-infused oil":"🧄","Fresh basil / mint":"🌿",
+  "Salt & black pepper":"🧂","Honey":"🍯","Onion powder":"🧅","Garlic powder":"🧄",
+  "Water":"💧","Black coffee":"☕","Green tea":"🍵","Peppermint tea":"🍵","Plain sparkling water":"💧",
+  "Wine (dry)":"🍷","Beer":"🍺","Soft drinks (HFCS)":"🥤","Apple juice":"🧃","Pear juice":"🧃",
+  "Chai / strong black tea (large)":"🍵","Chicory coffee substitute":"☕","Sugar-free drinks with polyols":"🥤"
+};
+function ficon(f){ return FOOD_ICON[f.name] || catIcon(f.cat); }
+
+// Common food/drink trigger quick-adds
+const QUICK_TRIGGERS = [
+  {name:"Dairy / Lactose", name_ar:"الألبان / اللاكتوز", icon:"🥛", note:"Milk, ice cream, soft cheese", note_ar:"الحليب، الآيس كريم، الجبن الطري"},
+  {name:"Wheat / Gluten (Fructans)", name_ar:"القمح / الغلوتين (فركتان)", icon:"🌾", note:"Bread, pasta, cereal", note_ar:"الخبز، المعكرونة، الحبوب"},
+  {name:"Onion & Garlic (Fructans)", name_ar:"البصل والثوم (فركتان)", icon:"🧅", note:"Fresh, powder, or in sauces", note_ar:"طازج أو بودرة أو في الصلصات"},
+  {name:"Apples & Pears (Fructose)", name_ar:"التفاح والكمثرى (فركتوز)", icon:"🍏", note:"", note_ar:""},
+  {name:"Beans & Lentils (GOS)", name_ar:"الفول والعدس (GOS)", icon:"🫘", note:"", note_ar:""},
+  {name:"Artificial Sweeteners (Polyols)", name_ar:"المحليات الصناعية (بوليولات)", icon:"🍬", note:"Sorbitol, mannitol, xylitol", note_ar:"سوربيتول، مانيتول، إكسيليتول"},
+  {name:"Caffeine", name_ar:"الكافيين", icon:"☕", note:"", note_ar:""},
+  {name:"Spicy food", name_ar:"الطعام الحار", icon:"🌶️", note:"", note_ar:""},
+  {name:"Alcohol", name_ar:"الكحول", icon:"🍷", note:"", note_ar:""},
+  {name:"Carbonated drinks", name_ar:"المشروبات الغازية", icon:"🥤", note:"", note_ar:""}
+];
+// Non-food triggers
+const NONFOOD_TRIGGERS = [
+  {name:"Stress / Anxiety", name_ar:"التوتر / القلق", icon:"😰", note:"", note_ar:""},
+  {name:"Poor sleep", name_ar:"قلة النوم", icon:"😴", note:"", note_ar:""},
+  {name:"Menstrual cycle", name_ar:"الدورة الشهرية", icon:"🩸", note:"", note_ar:""},
+  {name:"Travel", name_ar:"السفر", icon:"✈️", note:"", note_ar:""},
+  {name:"Illness / infection", name_ar:"المرض أو العدوى", icon:"🤒", note:"", note_ar:""},
+  {name:"Lack of exercise", name_ar:"قلة الحركة", icon:"🏃", note:"", note_ar:""}
+];
+
+const SYMPTOMS = ["Bloating","Abdominal pain","Gas","Diarrhea","Constipation"];
+const MEALS = ["Breakfast","Lunch","Dinner","Snack"];
+
+/* ---------------------------------------------------------------
+   STATE / PERSISTENCE
+--------------------------------------------------------------- */
+const STORE_TRIGGERS = "gutguide.triggers";
+const STORE_DIARY = "gutguide.diary";
+const STORE_HINT = "gutguide.hideInstallHint";
+const STORE_LANG = "gutguide.lang";
+const STORE_THEME = "gutguide.theme";
+
+function loadJSON(key, fallback){
+  try{ const raw = localStorage.getItem(key); return raw ? JSON.parse(raw) : fallback; }catch(e){ return fallback; }
+}
+function saveJSON(key, val){ try{ localStorage.setItem(key, JSON.stringify(val)); }catch(e){} }
+function todayISO(){ return new Date().toISOString().slice(0,10); }
+
+let state = {
+  view: "home",
+  lang: loadJSON(STORE_LANG, "en"),
+  theme: loadJSON(STORE_THEME, "auto"),
+  triggers: loadJSON(STORE_TRIGGERS, []),
+  diary: loadJSON(STORE_DIARY, []),
+  guideSearch: "", guideFilter: "all", guideCat: "all",
+  selectedDate: todayISO(),
+  trackerMode: "day",
+  selectedWeek: buildWeekList(1)[0],
+  fmSearch: "", triggerSort: "severity", fmView: "tiles", trackedView: "list"
+};
+let dateScrollPos = null;
+
+function uid(){ return Date.now().toString(36) + Math.random().toString(36).slice(2,7); }
+function persistTriggers(){ saveJSON(STORE_TRIGGERS, state.triggers); }
+function persistDiary(){ saveJSON(STORE_DIARY, state.diary); }
+
+/* ---------------------------------------------------------------
+   TOAST
+--------------------------------------------------------------- */
+let toastTimer;
+function toast(msg, undoFn){
+  const el = document.getElementById("toast");
+  el.innerHTML = '<span>'+esc(msg)+'</span>' + (undoFn ? '<button id="toast-undo" class="toast-undo">'+esc(t("undo"))+'</button>' : '');
+  el.classList.add("show");
+  clearTimeout(toastTimer);
+  if (undoFn){
+    document.getElementById("toast-undo").addEventListener("click", ()=>{
+      clearTimeout(toastTimer);
+      el.classList.remove("show");
+      undoFn();
+    });
+  }
+  toastTimer = setTimeout(()=> el.classList.remove("show"), undoFn ? 3000 : 1800);
+}
+
+/* ---------------------------------------------------------------
+   TABS / ROUTER
+--------------------------------------------------------------- */
+const TABS = [
+  {id:"home", icon:"home"}, {id:"guide", icon:"guide"}, {id:"triggers", icon:"target"},
+  {id:"insights", icon:"insights"}
+];
+
+function applyLangDom(){
+  document.documentElement.lang = state.lang;
+  document.documentElement.dir = state.lang === "ar" ? "rtl" : "ltr";
+  document.getElementById("lang-toggle").textContent = t("lang_toggle");
+}
+
+const THEME_ICON = {auto:"🌗", light:"☀️", dark:"🌙"};
+function applyTheme(){
+  if (state.theme === "auto"){
+    document.documentElement.removeAttribute("data-theme");
+  } else {
+    document.documentElement.setAttribute("data-theme", state.theme);
+  }
+  const btn = document.getElementById("theme-toggle");
+  if (btn) btn.textContent = THEME_ICON[state.theme];
+}
+
+function mountView(html){
+  const root = document.getElementById("view-root");
+  root.innerHTML = html;
+  root.classList.remove("view-anim");
+  void root.offsetWidth;
+  root.classList.add("view-anim");
+}
+
+function renderTabbar(){
+  const el = document.getElementById("tabbar");
+  el.innerHTML = TABS.map(tb => (
+    '<button class="tab-btn'+(state.view===tb.id?' active':'')+'" data-tab="'+tb.id+'">'
+      + svg(tb.icon) + '<span>'+t("tab_"+tb.id)+'</span>'
+    +'</button>'
+  )).join("");
+  el.querySelectorAll(".tab-btn").forEach(btn=>{
+    btn.addEventListener("click", ()=> setView(btn.dataset.tab));
+  });
+}
+function setView(v){
+  state.view = v;
+  document.getElementById("view-title").textContent = t("title_"+v);
+  document.getElementById("view-sub").textContent = t("sub_"+v);
+  renderTabbar();
+  renderView();
+  updateHomeFab();
+  document.getElementById("view-root").scrollTop = 0;
+  window.scrollTo(0,0);
+}
+function updateHomeFab(){
+  const wrap = document.getElementById("home-fab-wrap");
+  if (wrap) wrap.style.display = state.view === "home" ? "flex" : "none";
+}
+
+/* ---------------------------------------------------------------
+   VIEW: HOME
+--------------------------------------------------------------- */
+function isIOS(){
+  return /iP(hone|ad|od)/.test(navigator.userAgent) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+}
+function isStandalone(){
+  return window.navigator.standalone === true || window.matchMedia("(display-mode: standalone)").matches;
+}
+
+function renderHome(resetScroll){
+  if (resetScroll){
+    dateScrollPos = null;
+  } else {
+    const oldStrip = document.getElementById("date-scroll");
+    if (oldStrip) dateScrollPos = oldStrip.scrollLeft;
+  }
+
+  let html = "";
+
+  if (isIOS() && !isStandalone() && !loadJSON(STORE_HINT,false)) {
+    html += '<div class="banner" id="install-hint">'
+      + svg("home") +
+      '<div><strong>'+t("install_title")+'</strong> '+t("install_body")+'</div>'
+      + '<button class="dismiss" id="dismiss-hint" aria-label="Dismiss">×</button>'
+    + '</div>';
+  }
+
+  const hasHistory = !(state.diary.length===0 && state.triggers.length===0);
+  if (!hasHistory){
+    html += '<div class="banner">'+svg("target")+'<div><strong>'+t("get_started")+'</strong> '+t("get_started_body")+'</div></div>';
+  } else {
+    html += todayGlanceHtml();
+  }
+
+  html += '<button class="btn block" id="open-add-entry" style="margin-bottom:12px;">'+svg("plus")+' '+t("btn_log_entry")+'</button>';
+
+  html += '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">'
+    + '<div class="chip-row" style="margin-bottom:0;">'
+      + chip("day", state.trackerMode==="day", t("filter_daily"), "trackermode")
+      + chip("week", state.trackerMode==="week", t("filter_weekly"), "trackermode")
+    + '</div>'
+    + '<button class="link-btn" id="jump-today">'+t("today")+'</button>'
+    + '</div>';
+
+  html += renderDateStrip();
+
+  if (state.trackerMode === "day"){
+    const entries = state.diary.filter(e=>e.date===state.selectedDate).sort((a,b)=> (a.time||"").localeCompare(b.time||""));
+    html += '<div class="day-panel-head"><h3>'+esc(formatDate(state.selectedDate))+'</h3></div>';
+    if (!entries.length){
+      if (state.selectedDate === todayISO()){
+        html += '<div class="empty-inline">'
+          + '<div class="nudge-title">'+t("today_nudge_title")+'</div>'
+          + '<div class="nudge-sub">'+t("today_nudge_sub")+'</div>'
+          + '<button class="btn sm" id="nudge-log-now" style="margin-top:10px;">'+t("today_nudge_cta")+'</button>'
+          + '</div>';
+      } else {
+        html += '<div class="empty-inline">'+t("day_empty")+'</div>';
+      }
+    } else if (entries.length === 1){
+      html += entryCardHtml(entries[0]);
+    } else {
+      const mealGroups = {};
+      entries.forEach(e=>{ const m = e.meal || "Snack"; (mealGroups[m]=mealGroups[m]||[]).push(e); });
+      MEALS.forEach(m=>{
+        if (!mealGroups[m]) return;
+        html += '<div class="date-group-lbl">'+esc(mealLabel(m))+'</div>' + mealGroups[m].map(entryCardHtml).join("");
+      });
+      Object.keys(mealGroups).forEach(m=>{
+        if (MEALS.includes(m)) return;
+        html += '<div class="date-group-lbl">'+esc(mealLabel(m))+'</div>' + mealGroups[m].map(entryCardHtml).join("");
+      });
+    }
+  } else {
+    const start = state.selectedWeek, end = weekEndISO(start);
+    const weekEntries = state.diary.filter(e=> e.date>=start && e.date<=end);
+    html += '<div class="day-panel-head"><h3>'+esc(weekLabel(start))+'</h3></div>';
+    html += weekShapeStripHtml(start);
+    if (!weekEntries.length){
+      html += '<div class="empty-inline">'+t("day_empty")+'</div>';
+    } else {
+      const groups = {};
+      [...weekEntries].sort((a,b)=> (b.date+b.time).localeCompare(a.date+a.time)).forEach(e=> (groups[e.date]=groups[e.date]||[]).push(e));
+      Object.keys(groups).sort().reverse().forEach(d=>{
+        html += '<div class="date-group-lbl">'+esc(formatDate(d))+'</div>';
+        groups[d].forEach(e=> html += entryCardHtml(e));
+      });
+    }
+  }
+
+  html += '<button class="link-btn" id="open-disclaimer" style="display:block;margin:18px auto 4px;">ℹ️ '+t("disclaimer_link")+'</button>';
+
+  mountView(html);
+
+  const hintBtn = document.getElementById("dismiss-hint");
+  if (hintBtn) hintBtn.addEventListener("click", ()=>{
+    saveJSON(STORE_HINT, true);
+    document.getElementById("install-hint").remove();
+  });
+  document.getElementById("open-add-entry").addEventListener("click", ()=> openEntryModal());
+  document.getElementById("open-disclaimer").addEventListener("click", openDisclaimerModal);
+  document.getElementById("jump-today").addEventListener("click", ()=>{
+    state.trackerMode = "day";
+    state.selectedDate = todayISO();
+    renderHome(true);
+  });
+  const nudgeBtn = document.getElementById("nudge-log-now");
+  if (nudgeBtn) nudgeBtn.addEventListener("click", ()=> openEntryModal());
+  document.querySelectorAll('[data-chip="trackermode"]').forEach(c=> c.addEventListener("click", ()=>{
+    state.trackerMode = c.dataset.val; renderHome();
+  }));
+  document.querySelectorAll("[data-entry-edit]").forEach(card=> card.addEventListener("click", (e)=>{
+    if (e.target.closest("[data-del]")) return;
+    openEntryModal(card.dataset.entryEdit);
+  }));
+  document.querySelectorAll("[data-del]").forEach(b=> b.addEventListener("click", (e)=>{
+    e.stopPropagation();
+    state.diary = state.diary.filter(e=> e.id!==b.dataset.del);
+    persistDiary();
+    renderHome();
+  }));
+
+  const stripEl = document.getElementById("date-scroll");
+  if (stripEl){
+    if (state.trackerMode==="day"){
+      stripEl.querySelectorAll(".date-pill").forEach(p=> p.addEventListener("click", ()=>{
+        state.selectedDate = p.dataset.date; renderHome();
+      }));
+    } else {
+      stripEl.querySelectorAll(".date-pill").forEach(p=> p.addEventListener("click", ()=>{
+        state.selectedWeek = p.dataset.week; renderHome();
+      }));
+    }
+    if (dateScrollPos !== null){
+      stripEl.scrollLeft = dateScrollPos;
+    } else {
+      const sel = stripEl.querySelector(".date-pill.selected") || stripEl.lastElementChild;
+      if (sel) sel.scrollIntoView({inline:"end", block:"nearest"});
+    }
+  }
+}
+function statTile(val,lbl){ return '<div class="stat-tile"><div class="val">'+val+'</div><div class="lbl">'+lbl+'</div></div>'; }
+function statSeg(iconName, colorVar, val, lbl){
+  return '<div class="stat-seg"><span class="ic" style="color:'+colorVar+';">'+svg(iconName)+'</span><div class="val">'+val+'</div><div class="lbl">'+lbl+'</div></div>';
+}
+function computeStreak(){
+  const dateSet = new Set(state.diary.map(e=>e.date));
+  let cursor = new Date(); cursor.setHours(0,0,0,0);
+  if (!dateSet.has(todayISO())) cursor.setDate(cursor.getDate()-1);
+  let streak = 0;
+  while (dateSet.has(cursor.toISOString().slice(0,10))){
+    streak++;
+    cursor.setDate(cursor.getDate()-1);
+  }
+  return streak;
+}
+function todayGlanceHtml(){
+  const todayEntries = state.diary.filter(e=>e.date===todayISO());
+  const flareCount = todayEntries.filter(e=> Math.max(0, ...Object.values(e.symptoms||{})) >= 2).length;
+  const streak = computeStreak();
+  let html = '<div class="today-glance">';
+  html += '<span>'+(todayEntries.length ? t("glance_logged_tpl").replace("{n}", todayEntries.length) : t("glance_empty_today"))+'</span>';
+  if (flareCount){
+    html += '<span class="tg-sep">·</span><span class="tg-flare">'+t("flare_tpl").replace("{n}", flareCount)+'</span>';
+  }
+  if (streak >= 2){
+    html += '<span class="tg-sep">·</span><span class="tg-streak">🔥 '+t("glance_streak_tpl").replace("{n}", streak)+'</span>';
+  }
+  html += '</div>';
+  return html;
+}
+function weekShapeStripHtml(startISO){
+  const locale = state.lang==="ar" ? "ar" : "en";
+  let html = '<div class="week-shape">';
+  for (let i=0;i<7;i++){
+    const d = new Date(startISO+"T00:00:00"); d.setDate(d.getDate()+i);
+    const iso = d.toISOString().slice(0,10);
+    const info = dayInfo(iso);
+    const cls = info.count===0 ? "" : (info.flare ? "flare" : "ok");
+    html += '<div class="week-shape-seg '+cls+'"><span class="wd">'+esc(d.toLocaleDateString(locale,{weekday:"narrow"}))+'</span><span class="bar"></span></div>';
+  }
+  html += '</div>';
+  return html;
+}
+function openDisclaimerModal(){
+  const root = document.getElementById("modal-root");
+  root.innerHTML = '<div class="modal-backdrop" id="disc-backdrop">'
+    + '<div class="modal-sheet" style="max-height:60vh;">'
+    + '<div class="modal-head"><h2>'+t("disclaimer_title")+'</h2><button id="disc-close">×</button></div>'
+    + '<p class="small secondary">'+esc(t("disclaimer"))+'</p>'
+    + '</div></div>';
+  document.getElementById("disc-close").addEventListener("click", closeModal);
+  document.getElementById("disc-backdrop").addEventListener("click", (e)=>{ if (e.target.id==="disc-backdrop") closeModal(); });
+}
+
+/* ---------------------------------------------------------------
+   VIEW: FODMAP GUIDE
+--------------------------------------------------------------- */
+function renderGuide(){
+  let html = '<div class="search-row"><input type="search" id="guide-search" placeholder="'+esc(t("search_placeholder"))+'" value="'+esc(state.guideSearch)+'"></div>';
+
+  html += '<div class="chip-row" id="level-filters">'
+    + chip("all", state.guideFilter==="all", t("filter_all"), "level")
+    + chip("low", state.guideFilter==="low", t("filter_low"), "level")
+    + chip("mod", state.guideFilter==="mod", t("filter_mod"), "level")
+    + chip("high", state.guideFilter==="high", t("filter_high"), "level")
+    + '</div>';
+
+  html += '<div class="chip-row" id="cat-filters">'
+    + chip("all", state.guideCat==="all", t("filter_all_cat"), "cat")
+    + Object.keys(CATS).map(k=> chip(k, state.guideCat===k, catIcon(k)+" "+catLabel(k), "cat")).join("")
+    + '</div>';
+
+  const filtered = filterFoods(state.guideSearch, state.guideFilter, state.guideCat);
+
+  if (!filtered.length){
+    html += emptyState("search", t("guide_empty_title"), t("guide_empty_sub"));
+  } else {
+    const catGroups = {};
+    filtered.forEach(f=>{ (catGroups[f.cat] = catGroups[f.cat] || []).push(f); });
+    Object.keys(CATS).forEach(catKey=>{
+      const items = catGroups[catKey];
+      if (!items || !items.length) return;
+      html += '<div class="card guide-cat-card">';
+      html += '<div class="cat-heading"><span>'+catIcon(catKey)+'</span><span>'+esc(catLabel(catKey))+'</span></div>';
+      items.forEach(f=>{
+        html += '<div class="food-item"><span class="f-ic">'+ficon(f)+'</span><div class="f-body"><div class="name">'+esc(fname(f))+'</div>'
+          + (fnote(f) ? '<div class="serv">'+esc(fnote(f))+'</div>' : '')
+          + '</div>' + badge(f.level) + '</div>';
+      });
+      html += '</div>';
+    });
+  }
+
+  html += '<p class="small muted" style="text-align:center;padding:4px 8px 0;">'+t("guide_footnote")+'</p>';
+
+  mountView(html);
+
+  document.getElementById("guide-search").addEventListener("input", (e)=>{
+    state.guideSearch = e.target.value;
+    renderGuide();
+    const inp = document.getElementById("guide-search");
+    inp.focus();
+    inp.setSelectionRange(inp.value.length, inp.value.length);
+  });
+  document.querySelectorAll('[data-chip="level"]').forEach(c=> c.addEventListener("click", ()=>{ state.guideFilter = c.dataset.val; renderGuide(); }));
+  document.querySelectorAll('[data-chip="cat"]').forEach(c=> c.addEventListener("click", ()=>{ state.guideCat = c.dataset.val; renderGuide(); }));
+}
+function filterFoods(query, levelFilter, catFilter){
+  const q = (query||"").trim().toLowerCase();
+  return FOODS.filter(f=>{
+    if (levelFilter && levelFilter!=="all" && f.level!==levelFilter) return false;
+    if (catFilter && catFilter!=="all" && f.cat!==catFilter) return false;
+    if (q && !fname(f).toLowerCase().includes(q) && !f.name.toLowerCase().includes(q)) return false;
+    return true;
+  }).slice().sort((a,b)=> a.cat===b.cat ? fname(a).localeCompare(fname(b), state.lang) : Object.keys(CATS).indexOf(a.cat)-Object.keys(CATS).indexOf(b.cat));
+}
+function chip(val, active, label, group){
+  return '<button class="chip'+(active?' active':'')+'" data-chip="'+group+'" data-val="'+val+'">'+esc(label)+'</button>';
+}
+function badge(level){
+  const L = LVL[level];
+  return '<span class="badge '+L.cls+'"><span class="dot"></span>'+esc(levelLabel(level))+'</span>';
+}
+function emptyState(icon,title,sub){
+  return '<div class="empty-state">'+svg(icon)+'<div style="font-weight:700;color:var(--text);font-size:14px;">'+esc(title)+'</div><p>'+esc(sub)+'</p></div>';
+}
+
+/* ---------------------------------------------------------------
+   VIEW: TRIGGERS
+--------------------------------------------------------------- */
+const SEV_ORDER = ["Mild","Moderate","Severe"];
+function sevRank(s){ return SEV_ORDER.indexOf(s); }
+function sevColor(s){ return s==="Mild" ? "var(--good)" : s==="Severe" ? "var(--critical)" : "var(--warning)"; }
+function sevLabel(s){ return s==="Mild"?t("sev_mild"): s==="Severe"?t("sev_severe"):t("sev_moderate"); }
+function triggerName(tr){ return state.lang==="ar" && tr.name_ar ? tr.name_ar : tr.name; }
+function triggerNote(tr){ return state.lang==="ar" && tr.note_ar ? tr.note_ar : (tr.notes||tr.note||""); }
+
+function triggerKind(tr){
+  if (tr.kind) return tr.kind;
+  return NONFOOD_TRIGGERS.some(nf=> nf.name.toLowerCase()===tr.name.toLowerCase()) ? "nonfood" : "food";
+}
+function triggerStats(tr){
+  const nameLower = tr.name.toLowerCase();
+  const matches = state.diary.filter(e=> (e.foods||[]).some(f=> f.trim().toLowerCase()===nameLower));
+  const flareCount = matches.filter(e=> Math.max(0, ...Object.values(e.symptoms||{})) >= 2).length;
+  return {count: matches.length, flareCount};
+}
+function triggerStatsLabel(tr){
+  const s = triggerStats(tr);
+  if (!s.count) return "";
+  return t("logged_tpl").replace("{n}", s.count) + (s.flareCount ? " · " + t("flare_tpl").replace("{n}", s.flareCount) : "");
+}
+function triggerCardHtml(tr){
+  const note = triggerNote(tr);
+  const stats = triggerStatsLabel(tr);
+  return '<div class="trigger-card" data-edit="'+tr.id+'">'
+    + '<span class="ic">'+(tr.icon||'🍽️')+'</span>'
+    + '<div class="body"><div class="name">'+esc(triggerName(tr))+(tr.auto?' <span class="auto-tag">'+esc(t("auto_tag"))+'</span>':'')+'</div>'
+    + '<div class="meta">'+esc(sevLabel(tr.severity))+(note?' · '+esc(note):'')+(stats?' · '+esc(stats):'')+'</div></div>'
+    + '<span class="sev-dot" style="background:'+sevColor(tr.severity)+'"></span>'
+    + '<button class="rm" data-rm="'+tr.id+'" aria-label="Remove">×</button>'
+    + '</div>';
+}
+function removeTriggerById(id){
+  const idx = state.triggers.findIndex(tr=> tr.id===id);
+  if (idx<0) return;
+  const removed = state.triggers[idx];
+  state.triggers.splice(idx,1);
+  persistTriggers();
+  renderTriggers();
+  toast(t("toast_removed"), ()=>{
+    state.triggers.splice(Math.min(idx, state.triggers.length), 0, removed);
+    persistTriggers();
+    renderTriggers();
+  });
+}
+function sortTriggerList(list){
+  if (state.triggerSort === "recent") return [...list].sort((a,b)=> (b.added||0)-(a.added||0));
+  return [...list].sort((a,b)=> sevRank(b.severity)-sevRank(a.severity));
+}
+
+const FM_CAP = 6;
+function suggestedTriggers(){
+  const existing = new Set(state.triggers.map(tr=>tr.name.toLowerCase()));
+  const freq = {};
+  state.diary.forEach(e=>{
+    (e.foods||[]).forEach(f=>{
+      const name = f.trim();
+      if (!name || existing.has(name.toLowerCase())) return;
+      const k = name.toLowerCase();
+      const ts = new Date(e.date).getTime() || 0;
+      if (!freq[k]) freq[k] = {name, count:0, last:0};
+      freq[k].count++;
+      if (ts > freq[k].last) freq[k].last = ts;
+    });
+  });
+  return Object.values(freq).sort((a,b)=> b.count-a.count || b.last-a.last).slice(0,8);
+}
+
+function renderTriggers(){
+  const existingNames = new Set(state.triggers.map(tr=>tr.name.toLowerCase()));
+
+  let html = "";
+  if (!state.triggers.length){
+    html += emptyState("target", t("triggers_empty_title"), t("triggers_empty_sub"));
+  } else {
+    const foodTr = state.triggers.filter(tr=> triggerKind(tr)==="food");
+    const nonfoodTr = state.triggers.filter(tr=> triggerKind(tr)==="nonfood");
+    const tiledTracked = state.trackedView === "tiles";
+    html += '<div class="card"><h2>'+t("tracked_heading")+' ('+state.triggers.length+')</h2>'
+      + '<div class="chip-row">'
+        + chip("severity", state.triggerSort==="severity", t("sort_severity"), "triggersort")
+        + chip("recent", state.triggerSort==="recent", t("sort_recent"), "triggersort")
+      + '</div>'
+      + '<div class="chip-row" style="margin-top:4px;">'
+        + chip("list", !tiledTracked, t("view_list"), "trackedview")
+        + chip("tiles", tiledTracked, t("view_tiles"), "trackedview")
+      + '</div>';
+    const groupHtml = (list)=> tiledTracked
+      ? '<div class="trigger-tile-grid">'+sortTriggerList(list).map(triggerTileHtml).join("")+'</div>'
+      : sortTriggerList(list).map(triggerCardHtml).join("");
+    if (foodTr.length){
+      html += '<div class="cat-heading" style="margin-top:14px;"><span>'+t("group_food")+'</span></div>' + groupHtml(foodTr);
+    }
+    if (nonfoodTr.length){
+      html += '<div class="cat-heading" style="margin-top:14px;"><span>'+t("group_nonfood")+'</span></div>' + groupHtml(nonfoodTr);
+    }
+    html += '</div>';
+  }
+
+  html += '<div class="card"><h2>'+t("quick_add_common")+'</h2><div class="chip-row">';
+  QUICK_TRIGGERS.forEach(qt=>{
+    const added = existingNames.has(qt.name.toLowerCase());
+    html += '<button class="chip'+(added?' active':'')+'" data-quick="'+esc(qt.name)+'" data-kind="food">'
+      + (added?'✓ ':'') + qt.icon + ' ' + esc(state.lang==="ar"?qt.name_ar:qt.name) + '</button>';
+  });
+  html += '</div>';
+  html += '<div class="cat-heading" style="margin-top:16px;"><span>'+t("nonfood_heading")+'</span></div><div class="chip-row">';
+  NONFOOD_TRIGGERS.forEach(qt=>{
+    const added = existingNames.has(qt.name.toLowerCase());
+    html += '<button class="chip'+(added?' active':'')+'" data-quick="'+esc(qt.name)+'" data-kind="nonfood">'
+      + (added?'✓ ':'') + qt.icon + ' ' + esc(state.lang==="ar"?qt.name_ar:qt.name) + '</button>';
+  });
+  html += '</div>';
+  const suggested = suggestedTriggers();
+  if (suggested.length){
+    html += '<div class="cat-heading" style="margin-top:16px;"><span>'+t("suggested_heading")+'</span></div><div class="chip-row">';
+    suggested.forEach(s=>{
+      const match = FOODS.find(f=> f.name.toLowerCase()===s.name.toLowerCase());
+      const ic = match ? ficon(match) : "🍽️";
+      html += '<button class="chip" data-suggest="'+esc(s.name)+'">'+ic+' '+esc(s.name)+'</button>';
+    });
+    html += '</div>';
+  }
+  html += '</div>';
+
+  const tilesMode = state.fmView !== "list";
+  const searching = !!state.fmSearch.trim();
+  const fmGroups = {};
+  Object.keys(CATS).forEach(k=> fmGroups[k] = []);
+  if (searching){
+    filterFoods(state.fmSearch, "all", "all").forEach(f=> fmGroups[f.cat].push(f));
+  } else {
+    Object.keys(CATS).forEach(k=>{ fmGroups[k] = FOODS.filter(f=>f.cat===k).slice(0, FM_CAP); });
+  }
+  let fmBody = "", anyFm = false;
+  Object.keys(CATS).forEach(catKey=>{
+    const items = fmGroups[catKey];
+    if (!items.length) return;
+    anyFm = true;
+    const totalInCat = FOODS.filter(f=>f.cat===catKey).length;
+    fmBody += '<div class="cat-heading"><span>'+catIcon(catKey)+'</span><span>'+esc(catLabel(catKey))+'</span></div>';
+    fmBody += tilesMode
+      ? '<div class="fm-tile-grid">'+items.map(f=> fmTile(f, existingNames)).join("")+'</div>'
+      : items.map(f=> fmRow(f, existingNames)).join("");
+    if (!searching && totalInCat > items.length){
+      fmBody += '<div class="fm-more-hint">'+t("fm_more_hint").replace("{n}", totalInCat-items.length)+'</div>';
+    }
+  });
+  if (!anyFm) fmBody = emptyState("search", t("guide_empty_title"), t("guide_empty_sub"));
+  html += '<div class="card"><h2>'+t("fodmap_list_heading")+'</h2>'
+    + '<input type="search" id="fm-inline-search" placeholder="'+esc(t("search_placeholder"))+'" value="'+esc(state.fmSearch)+'" style="margin-bottom:8px;">'
+    + '<div class="chip-row" style="margin-bottom:6px;">'
+      + chip("tiles", tilesMode, t("view_tiles"), "fmview")
+      + chip("list", !tilesMode, t("view_list"), "fmview")
+    + '</div>'
+    + '<div class="fodmap-list-inline" id="fm-inline-list">'+fmBody+'</div>'
+    + '</div>';
+
+  html += '<div class="card"><h2>'+t("custom_heading")+'</h2>'
+    + '<label class="field-label">'+t("field_food")+'</label>'
+    + '<input type="text" id="trig-name" placeholder="'+esc(t("food_placeholder"))+'">'
+    + '<label class="field-label">'+t("field_severity")+'</label>'
+    + '<div class="sev-select" id="trig-sev">'
+      + SEV_ORDER.map(s=> '<div class="sev-opt" data-sev="'+s+'">'+sevLabel(s)+'</div>').join("")
+    + '</div>'
+    + '<label class="field-label">'+t("field_notes")+'</label>'
+    + '<textarea id="trig-notes" rows="2" placeholder="'+esc(t("notes_placeholder"))+'"></textarea>'
+    + '<button class="btn block" id="trig-add" style="margin-top:14px;">'+t("btn_add_trigger")+'</button>'
+    + '</div>';
+
+  mountView(html);
+
+  let chosenSev = "Moderate";
+  const sevBox = document.getElementById("trig-sev");
+  function paintSev(){ sevBox.querySelectorAll(".sev-opt").forEach(o=> o.classList.toggle("on", o.dataset.sev===chosenSev)); }
+  paintSev();
+  sevBox.querySelectorAll(".sev-opt").forEach(o=> o.addEventListener("click", ()=>{ chosenSev = o.dataset.sev; paintSev(); }));
+
+  document.getElementById("trig-add").addEventListener("click", ()=>{
+    const nameInp = document.getElementById("trig-name");
+    const name = nameInp.value.trim();
+    if (!name){ nameInp.focus(); return; }
+    if (existingNames.has(name.toLowerCase())){ toast(t("toast_dup")); return; }
+    state.triggers.push({id:uid(), name, icon:"🍽️", severity:chosenSev, notes:document.getElementById("trig-notes").value.trim(), added:Date.now()});
+    persistTriggers();
+    toast(t("toast_added"));
+    renderTriggers();
+  });
+
+  document.querySelectorAll("[data-quick]").forEach(btn=> btn.addEventListener("click", ()=>{
+    const name = btn.dataset.quick;
+    const kind = btn.dataset.kind === "nonfood" ? "nonfood" : "food";
+    const source = kind === "nonfood" ? NONFOOD_TRIGGERS : QUICK_TRIGGERS;
+    const existing = state.triggers.find(tr=> tr.name.toLowerCase()===name.toLowerCase());
+    if (existing){
+      removeTriggerById(existing.id);
+    } else {
+      const qt = source.find(q=>q.name===name);
+      state.triggers.push({id:uid(), name, name_ar:qt.name_ar, icon:qt.icon, kind, severity:"Moderate", notes:qt.note||"", note_ar:qt.note_ar||"", added:Date.now()});
+      persistTriggers();
+      toast(t("toast_added"));
+      renderTriggers();
+    }
+  }));
+
+  const fmSearchInp = document.getElementById("fm-inline-search");
+  fmSearchInp.addEventListener("input", (e)=>{
+    state.fmSearch = e.target.value;
+    renderTriggers();
+    const i = document.getElementById("fm-inline-search");
+    i.focus(); i.setSelectionRange(i.value.length, i.value.length);
+  });
+  document.querySelectorAll("#fm-inline-list [data-add]").forEach(btn=> btn.addEventListener("click", ()=>{
+    const foodName = btn.dataset.add;
+    const existing = state.triggers.find(tr=> tr.name.toLowerCase()===foodName.toLowerCase());
+    if (existing){
+      removeTriggerById(existing.id);
+    } else {
+      const food = FOODS.find(f=>f.name===foodName);
+      state.triggers.push({id:uid(), name:food.name, name_ar:food.name_ar, icon:ficon(food), kind:"food", severity:"Moderate", notes:"", note_ar:"", added:Date.now()});
+      persistTriggers();
+      toast(t("toast_added"));
+      renderTriggers();
+    }
+  }));
+
+  document.querySelectorAll("[data-suggest]").forEach(btn=> btn.addEventListener("click", ()=>{
+    const name = btn.dataset.suggest;
+    const match = FOODS.find(f=> f.name.toLowerCase()===name.toLowerCase());
+    state.triggers.push({id:uid(), name, name_ar: match?match.name_ar:"", icon: match?ficon(match):"🍽️", kind:"food", severity:"Moderate", notes:"", note_ar:"", added:Date.now()});
+    persistTriggers();
+    toast(t("toast_added"));
+    renderTriggers();
+  }));
+
+  document.querySelectorAll('[data-chip="fmview"]').forEach(c=> c.addEventListener("click", ()=>{
+    state.fmView = c.dataset.val; renderTriggers();
+  }));
+  document.querySelectorAll('[data-chip="trackedview"]').forEach(c=> c.addEventListener("click", ()=>{
+    state.trackedView = c.dataset.val; renderTriggers();
+  }));
+
+  document.querySelectorAll('[data-chip="triggersort"]').forEach(c=> c.addEventListener("click", ()=>{
+    state.triggerSort = c.dataset.val; renderTriggers();
+  }));
+
+  document.querySelectorAll("[data-edit]").forEach(card=> card.addEventListener("click", (e)=>{
+    if (e.target.closest("[data-rm]")) return;
+    openEditTriggerModal(card.dataset.edit);
+  }));
+  document.querySelectorAll("[data-rm]").forEach(btn=> btn.addEventListener("click", (e)=>{
+    e.stopPropagation();
+    removeTriggerById(btn.dataset.rm);
+  }));
+}
+
+/* ---------------------------------------------------------------
+   FODMAP QUICK-ADD ROW + EDIT TRIGGER MODAL
+--------------------------------------------------------------- */
+function fmRow(f, existingNames){
+  const added = existingNames.has(f.name.toLowerCase());
+  return '<div class="fodmap-row"><span class="f-ic">'+ficon(f)+'</span><div class="info"><div class="name">'+esc(fname(f))+'</div>'
+    + '<div class="lvl lvl-'+f.level+'"><span class="dot"></span>'+esc(levelLabel(f.level))+'</div></div>'
+    + '<button class="add-btn'+(added?' added':'')+'" data-add="'+esc(f.name)+'">'
+      + (added ? svg("check") : svg("plus")) + '<span>'+(added?t("added_label"):t("add_label"))+'</span></button></div>';
+}
+function fmTile(f, existingNames){
+  const added = existingNames.has(f.name.toLowerCase());
+  return '<button class="fm-tile lvl-'+f.level+(added?' added':'')+'" data-add="'+esc(f.name)+'">'
+    + (added ? '<span class="fm-tile-check">'+svg("check")+'</span>' : '')
+    + '<span class="fm-tile-ic">'+ficon(f)+'</span>'
+    + '<span class="fm-tile-name">'+esc(fname(f))+'</span>'
+    + '<span class="fm-tile-lvl"><span class="fm-tile-dot"></span>'+esc(levelShort(f.level))+'</span>'
+    + '</button>';
+}
+function triggerTileHtml(tr){
+  const statLbl = triggerStatsLabel(tr);
+  return '<div class="trigger-tile" data-edit="'+tr.id+'">'
+    + '<button class="tile-rm" data-rm="'+tr.id+'" aria-label="Remove">×</button>'
+    + (tr.auto ? '<span class="auto-tag tile-auto">'+esc(t("auto_tag"))+'</span>' : '')
+    + '<span class="ic">'+(tr.icon||'🍽️')+'</span>'
+    + '<span class="name">'+esc(triggerName(tr))+'</span>'
+    + '<span class="sev-lbl" style="color:'+sevColor(tr.severity)+'"><span class="sev-dot" style="background:'+sevColor(tr.severity)+'"></span>'+esc(sevLabel(tr.severity))+'</span>'
+    + (statLbl ? '<span class="stat-lbl">'+esc(statLbl)+'</span>' : '')
+    + '</div>';
+}
+
+function openEditTriggerModal(id){
+  const tr = state.triggers.find(x=>x.id===id);
+  if (!tr) return;
+  let chosenSev = tr.severity;
+  const root = document.getElementById("modal-root");
+
+  function draw(){
+    root.innerHTML = '<div class="modal-backdrop" id="edit-backdrop">'
+      + '<div class="modal-sheet">'
+      + '<div class="modal-head"><h2>'+esc(triggerName(tr))+'</h2><button id="edit-close">×</button></div>'
+      + '<label class="field-label">'+t("field_severity")+'</label>'
+      + '<div class="sev-select" id="edit-sev">'
+        + SEV_ORDER.map(s=> '<div class="sev-opt'+(s===chosenSev?' on':'')+'" data-sev="'+s+'">'+sevLabel(s)+'</div>').join("")
+      + '</div>'
+      + '<label class="field-label">'+t("field_notes")+'</label>'
+      + '<textarea id="edit-notes" rows="2" placeholder="'+esc(t("notes_placeholder"))+'">'+esc(triggerNote(tr))+'</textarea>'
+      + '<button class="btn block" id="edit-save" style="margin-top:14px;">'+t("btn_save")+'</button>'
+      + '<button class="btn ghost block" id="edit-delete" style="margin-top:8px;color:var(--critical);border-color:var(--critical);">'+t("btn_delete")+'</button>'
+      + '</div></div>';
+
+    document.getElementById("edit-close").addEventListener("click", closeModal);
+    document.getElementById("edit-backdrop").addEventListener("click", (e)=>{ if (e.target.id==="edit-backdrop") closeModal(); });
+    document.querySelectorAll("#edit-sev .sev-opt").forEach(o=> o.addEventListener("click", ()=>{ chosenSev = o.dataset.sev; draw(); }));
+    document.getElementById("edit-save").addEventListener("click", ()=>{
+      tr.severity = chosenSev;
+      tr.notes = document.getElementById("edit-notes").value.trim();
+      tr.note_ar = "";
+      persistTriggers();
+      closeModal();
+      renderTriggers();
+    });
+    document.getElementById("edit-delete").addEventListener("click", ()=>{
+      closeModal();
+      removeTriggerById(tr.id);
+    });
+  }
+  draw();
+}
+function closeModal(){ document.getElementById("modal-root").innerHTML = ""; }
+
+/* ---------------------------------------------------------------
+   VIEW: DIARY (with horizontal date scroller)
+--------------------------------------------------------------- */
+function dayInfo(dateISO){
+  const entries = state.diary.filter(e=>e.date===dateISO);
+  const flare = entries.some(e=> Math.max(0, ...Object.values(e.symptoms||{})) >= 2);
+  return {count:entries.length, flare};
+}
+function buildDateList(days){
+  const arr = [];
+  const base = new Date(); base.setHours(0,0,0,0);
+  for (let i=days-1;i>=0;i--){
+    const d = new Date(base); d.setDate(base.getDate()-i);
+    arr.push(d.toISOString().slice(0,10));
+  }
+  return arr;
+}
+function startOfWeek(d){
+  const nd = new Date(d); nd.setHours(0,0,0,0);
+  const day = nd.getDay();
+  const diff = (day===0 ? -6 : 1-day);
+  nd.setDate(nd.getDate()+diff);
+  return nd;
+}
+function buildWeekList(n){
+  const arr = [];
+  const base = startOfWeek(new Date());
+  for (let i=n-1;i>=0;i--){
+    const d = new Date(base); d.setDate(base.getDate()-7*i);
+    arr.push(d.toISOString().slice(0,10));
+  }
+  return arr;
+}
+function weekEndISO(startISO){
+  const d = new Date(startISO+"T00:00:00"); d.setDate(d.getDate()+6);
+  return d.toISOString().slice(0,10);
+}
+function weekInfo(startISO){
+  const end = weekEndISO(startISO);
+  const entries = state.diary.filter(e=> e.date>=startISO && e.date<=end);
+  const flare = entries.some(e=> Math.max(0, ...Object.values(e.symptoms||{})) >= 2);
+  return {count:entries.length, flare};
+}
+function weekLabel(startISO){
+  const s = new Date(startISO+"T00:00:00"), end = new Date(weekEndISO(startISO)+"T00:00:00");
+  const locale = state.lang==="ar" ? "ar" : undefined;
+  const sMonth = s.toLocaleDateString(locale,{month:"short"}), eMonth = end.toLocaleDateString(locale,{month:"short"});
+  return sMonth===eMonth ? (sMonth+" "+s.getDate()+"–"+end.getDate()) : (sMonth+" "+s.getDate()+" – "+eMonth+" "+end.getDate());
+}
+function renderDateStrip(){
+  if (state.trackerMode === "week") return renderWeekStrip();
+  const dates = buildDateList(30);
+  const locale = state.lang==="ar" ? "ar" : "en";
+  let html = '<div class="date-scroll-wrap"><div class="date-scroll" id="date-scroll">';
+  dates.forEach(dISO=>{
+    const d = new Date(dISO+"T00:00:00");
+    const info = dayInfo(dISO);
+    const dotCls = info.count===0 ? "none" : (info.flare ? "flare" : "");
+    const selected = dISO===state.selectedDate;
+    html += '<button class="date-pill'+(selected?' selected':'')+'" data-date="'+dISO+'">'
+      + '<span class="dow">'+esc(d.toLocaleDateString(locale,{weekday:"short"}))+'</span>'
+      + '<span class="dom">'+d.getDate()+'</span>'
+      + '<span class="dot '+dotCls+'"></span>'
+      + '</button>';
+  });
+  html += '</div></div>';
+  return html;
+}
+function renderWeekStrip(){
+  const weeks = buildWeekList(12);
+  let html = '<div class="date-scroll-wrap"><div class="date-scroll" id="date-scroll">';
+  weeks.forEach(wISO=>{
+    const info = weekInfo(wISO);
+    const dotCls = info.count===0 ? "none" : (info.flare ? "flare" : "");
+    const selected = wISO===state.selectedWeek;
+    html += '<button class="date-pill week-pill'+(selected?' selected':'')+'" data-week="'+wISO+'">'
+      + '<span class="dow">'+esc(weekLabel(wISO))+'</span>'
+      + '<span class="dot '+dotCls+'"></span>'
+      + '</button>';
+  });
+  html += '</div></div>';
+  return html;
+}
+function formatDate(iso){
+  const d = new Date(iso+"T00:00:00");
+  const today = new Date(); today.setHours(0,0,0,0);
+  const diff = Math.round((today - d)/86400000);
+  if (diff===0) return t("today");
+  if (diff===1) return t("yesterday");
+  const locale = state.lang==="ar" ? "ar" : undefined;
+  return d.toLocaleDateString(locale,{weekday:"short", month:"short", day:"numeric"});
+}
+function entryCardHtml(e){
+  let html = '<div class="entry-card" data-entry-edit="'+e.id+'"><div class="top"><div>'
+    + '<div class="time">'+esc(e.time||'')+(e.meal?' · '+esc(mealLabel(e.meal)):'')+'</div>'
+    + '<div class="foods">'+esc((e.foods||[]).join(", ")||"—")+'</div>'
+    + (e.amount ? '<div class="serv" style="margin-bottom:2px;">'+esc(e.amount)+'</div>' : '')
+    + '</div><button class="del" data-del="'+e.id+'">'+t("btn_delete")+'</button></div>';
+  const symEntries = Object.entries(e.symptoms||{}).filter(([,v])=>v>0);
+  if (symEntries.length){
+    html += '<div class="sym-chips">'+symEntries.map(([k,v])=>
+      '<span class="sym-chip'+(v>=2?' hi':'')+'">'+esc(symLabel(k))+' '+"●".repeat(v)+'</span>').join("")+'</div>';
+  } else {
+    html += '<div class="sym-chips"><span class="sym-chip">'+t("no_symptoms")+'</span></div>';
+  }
+  if (e.notes) html += '<div class="notes">'+esc(e.notes)+'</div>';
+  html += '</div>';
+  return html;
+}
+function mealFromHour(h){
+  if (h<11) return "Breakfast";
+  if (h<15) return "Lunch";
+  if (h<21) return "Dinner";
+  return "Snack";
+}
+function openEntryModal(editId){
+  const editingEntry = editId ? state.diary.find(e=>e.id===editId) : null;
+  const now = new Date();
+  const dateVal = editingEntry ? editingEntry.date : (state.trackerMode==="day" ? state.selectedDate : todayISO());
+  const timeVal = editingEntry ? (editingEntry.time || now.toTimeString().slice(0,5)) : now.toTimeString().slice(0,5);
+  const defaultMeal = editingEntry ? (editingEntry.meal || mealFromHour(now.getHours())) : mealFromHour(now.getHours());
+  const symState = {}; SYMPTOMS.forEach(s=> symState[s]= editingEntry ? (editingEntry.symptoms && editingEntry.symptoms[s] || 0) : 0);
+
+  const knownNames = [...new Set([...FOODS.map(f=>fname(f)), ...state.triggers.map(tr=>triggerName(tr))])];
+
+  const root = document.getElementById("modal-root");
+  root.innerHTML = '<div class="modal-backdrop" id="modal-backdrop">'
+    + '<div class="modal-sheet">'
+    + '<div class="modal-head"><h2>'+(editingEntry ? t("edit_entry_title") : t("btn_log_entry"))+'</h2><button id="modal-close">×</button></div>'
+    + '<label class="field-label">'+t("field_foods")+'</label>'
+    + '<div class="food-chip-input" id="e-foods-chips"></div>'
+    + '<datalist id="known-foods">'+knownNames.map(n=>'<option value="'+esc(n)+'">').join("")+'</datalist>'
+    + '<label class="field-label">'+t("field_amount")+'</label>'
+    + '<input type="text" id="e-amount" placeholder="'+esc(t("amount_placeholder"))+'" value="'+esc(editingEntry ? (editingEntry.amount||"") : "")+'">'
+    + '<label class="field-label" style="margin-top:16px;">'+t("symptoms_heading")+'</label>'
+    + SYMPTOMS.map(s=> symptomRow(s)).join("")
+    + '<label style="display:flex;align-items:center;gap:8px;margin:16px 0 4px;font-size:13px;color:var(--text-secondary);cursor:pointer;">'
+      + '<input type="checkbox" id="e-advanced-toggle" style="width:auto;"'+(editingEntry?' checked':'')+'>' + esc(t("more_options"))
+    + '</label>'
+    + '<div id="e-advanced" style="display:'+(editingEntry?'block':'none')+';">'
+      + '<label class="field-label">'+t("field_date")+'</label><input type="date" id="e-date" value="'+dateVal+'">'
+      + '<label class="field-label">'+t("field_time")+'</label><input type="time" id="e-time" value="'+timeVal+'">'
+      + '<label class="field-label">'+t("field_meal")+'</label><select id="e-meal">'
+        + MEALS.map(m=>'<option value="'+m+'"'+(m===defaultMeal?' selected':'')+'>'+esc(mealLabel(m))+'</option>').join("")
+      + '</select>'
+      + '<label class="field-label">'+t("field_notes")+'</label>'
+      + '<textarea id="e-notes" rows="2" placeholder="'+esc(t("notes_placeholder"))+'">'+esc(editingEntry ? (editingEntry.notes||"") : "")+'</textarea>'
+    + '</div>'
+    + '<button class="btn block" id="e-save" style="margin-top:16px;">'+t("btn_save_entry")+'</button>'
+    + '</div></div>';
+
+  document.getElementById("e-advanced-toggle").addEventListener("change", (e)=>{
+    document.getElementById("e-advanced").style.display = e.target.checked ? "block" : "none";
+  });
+
+  let entryFoods = editingEntry ? [...(editingEntry.foods||[])] : [];
+  function renderFoodChips(focusInput){
+    const wrap = document.getElementById("e-foods-chips");
+    wrap.innerHTML = entryFoods.map((f,i)=> '<span class="food-chip">'+esc(f)+'<button type="button" data-rmfood="'+i+'" aria-label="Remove">×</button></span>').join("")
+      + '<input type="text" id="e-foods-input" list="known-foods" placeholder="'+(entryFoods.length ? "" : esc(t("foods_placeholder")))+'">';
+    const inp = document.getElementById("e-foods-input");
+    inp.addEventListener("keydown", (e)=>{
+      if (e.key==="Enter" || e.key===","){ e.preventDefault(); commitFood(inp.value); }
+      else if (e.key==="Backspace" && !inp.value && entryFoods.length){ entryFoods.pop(); renderFoodChips(true); }
+    });
+    inp.addEventListener("blur", ()=>{ if (inp.value.trim()) commitFood(inp.value); });
+    wrap.querySelectorAll("[data-rmfood]").forEach(b=> b.addEventListener("click", ()=>{
+      entryFoods.splice(Number(b.dataset.rmfood),1); renderFoodChips();
+    }));
+    if (focusInput) inp.focus();
+  }
+  function commitFood(val){
+    const name = val.trim().replace(/,$/,"").trim();
+    if (name) entryFoods.push(name);
+    const inp = document.getElementById("e-foods-input");
+    if (inp) inp.value = "";
+    renderFoodChips(true);
+  }
+  renderFoodChips();
+
+  function symptomRow(s){
+    return '<div class="symptom-row"><span class="lbl">'+esc(symLabel(s))+'</span><div class="sev-scale" data-symptom="'+s+'">'
+      + [0,1,2,3].map(n=> '<button class="sev-btn on'+n+'" data-n="'+n+'">'+n+'</button>').join("")
+      + '</div></div>';
+  }
+  function paintSymptoms(){
+    root.querySelectorAll(".sev-scale").forEach(row=>{
+      const s = row.dataset.symptom;
+      row.querySelectorAll(".sev-btn").forEach(b=> b.classList.toggle("on", Number(b.dataset.n)===symState[s]));
+    });
+  }
+  paintSymptoms();
+  root.querySelectorAll(".sev-scale").forEach(row=>{
+    row.querySelectorAll(".sev-btn").forEach(b=> b.addEventListener("click", ()=>{
+      symState[row.dataset.symptom] = Number(b.dataset.n);
+      paintSymptoms();
+    }));
+  });
+
+  document.getElementById("modal-close").addEventListener("click", closeModal);
+  document.getElementById("modal-backdrop").addEventListener("click", (e)=>{ if (e.target.id==="modal-backdrop") closeModal(); });
+
+  document.getElementById("e-save").addEventListener("click", ()=>{
+    const pendingInp = document.getElementById("e-foods-input");
+    if (pendingInp && pendingInp.value.trim()){
+      entryFoods.push(pendingInp.value.trim().replace(/,$/,"").trim());
+      pendingInp.value = "";
+    }
+    const foods = entryFoods.slice();
+    const entry = {
+      id: editingEntry ? editingEntry.id : uid(),
+      date: document.getElementById("e-date").value || dateVal,
+      time: document.getElementById("e-time").value || timeVal,
+      meal: document.getElementById("e-meal").value,
+      foods, amount: document.getElementById("e-amount").value.trim(),
+      symptoms: {...symState},
+      notes: document.getElementById("e-notes").value.trim()
+    };
+    if (editingEntry){
+      const idx = state.diary.findIndex(e=> e.id===editingEntry.id);
+      if (idx > -1) state.diary[idx] = entry;
+    } else {
+      state.diary.push(entry);
+    }
+    persistDiary();
+    state.selectedDate = entry.date;
+    state.trackerMode = "day";
+
+    // Auto-add foods to Triggers when this entry carries a significant symptom (level 2+)
+    const maxSym = Math.max(0, ...Object.values(entry.symptoms));
+    const addedNames = [];
+    if (maxSym >= 2 && foods.length){
+      const existing = new Set(state.triggers.map(tr=>tr.name.toLowerCase()));
+      foods.forEach(fn=>{
+        if (existing.has(fn.toLowerCase())) return;
+        const match = FOODS.find(f=> f.name.toLowerCase()===fn.toLowerCase());
+        state.triggers.push({
+          id:uid(), name:fn, name_ar: match ? match.name_ar : "",
+          icon: match ? ficon(match) : "🍽️",
+          kind:"food", auto:true,
+          severity: maxSym>=3 ? "Severe" : "Moderate",
+          notes: I18N.en.auto_added_note, note_ar: I18N.ar.auto_added_note, added:Date.now()
+        });
+        existing.add(fn.toLowerCase());
+        addedNames.push(fn);
+      });
+      if (addedNames.length) persistTriggers();
+    }
+
+    closeModal();
+    toast(addedNames.length ? t("toast_autoadded").replace("{list}", addedNames.join(", ")) : (editingEntry ? t("toast_updated") : t("toast_saved")));
+    renderHome();
+  });
+}
+
+/* ---------------------------------------------------------------
+   VIEW: INSIGHTS
+--------------------------------------------------------------- */
+function renderInsights(){
+  let html = "";
+  if (state.diary.length < 3){
+    html += emptyState("insights", t("insights_scarce_title"), t("insights_scarce_sub"));
+    mountView(html);
+    return;
+  }
+
+  const counts = {};
+  state.diary.forEach(e=>{
+    const flare = Math.max(0, ...Object.values(e.symptoms||{})) >= 2;
+    (e.foods||[]).forEach(f=>{
+      const key = f.trim();
+      if (!key) return;
+      counts[key] = counts[key] || {total:0, flare:0};
+      counts[key].total += 1;
+      if (flare) counts[key].flare += 1;
+    });
+  });
+
+  const rows = Object.entries(counts).map(([name,c])=> ({name, ...c}))
+    .sort((a,b)=> b.flare - a.flare || b.total - a.total).slice(0, 8);
+
+  const totalLogged = state.diary.length;
+  const symptomLogs = state.diary.filter(e=> Math.max(0, ...Object.values(e.symptoms||{})) >= 2).length;
+
+  html += '<div class="stat-strip">'
+    + statSeg("diary", "var(--brand)", totalLogged, t("stat_total"))
+    + statSeg("warn", "var(--critical)", symptomLogs, t("stat_flareups"))
+    + statSeg("target", "var(--brand)", state.triggers.length, t("stat_triggers"))
+    + '</div>';
+
+  if (!rows.some(r=>r.flare>0)){
+    html += '<div class="card" style="margin-top:12px;">'+emptyState("check", t("insights_noflare_title"), t("insights_noflare_sub"))+'</div>';
+    mountView(html);
+    return;
+  }
+
+  const max = Math.max(...rows.map(r=>r.flare), 1);
+  html += '<div class="card" style="margin-top:12px;">'
+    + '<h2>'+t("chart_title")+'</h2>'
+    + '<p class="small muted" style="margin:-4px 0 14px;">'+t("chart_sub")+'</p>'
+    + '<div class="chart-wrap" id="chart-wrap" style="padding-inline-end:30px;">'
+    + rows.map(r=>{
+        const pct = Math.round((r.flare/max)*100);
+        return '<div class="bar-row">'
+          + '<div class="blabel">'+esc(r.name)+'</div>'
+          + '<div class="bar-track"><div class="bar-fill" tabindex="0" style="width:0%;" data-pct="'+pct+'" '
+            + 'data-name="'+esc(r.name)+'" data-flare="'+r.flare+'" data-total="'+r.total+'">'
+            + '<span class="tip-val">'+r.flare+'</span></div></div>'
+          + '</div>';
+      }).join("")
+    + '</div>'
+    + '<p class="small muted" style="margin-top:4px;">'+t("chart_footnote")+'</p>'
+    + '</div>';
+
+  mountView(html);
+
+  const wrap = document.getElementById("chart-wrap");
+  requestAnimationFrame(()=>{
+    requestAnimationFrame(()=>{
+      wrap.querySelectorAll(".bar-fill").forEach(el=>{ el.style.width = el.dataset.pct + "%"; });
+    });
+  });
+  let tip;
+  function showTip(el){
+    hideTip();
+    const rect = el.getBoundingClientRect();
+    const wrapRect = wrap.getBoundingClientRect();
+    tip = document.createElement("div");
+    tip.className = "chart-tooltip";
+    tip.innerHTML = '<b>'+el.dataset.flare+'</b> / '+el.dataset.total+' '+esc(t("tooltip_logs"))+' &middot; <span>'+esc(el.dataset.name)+'</span>';
+    wrap.appendChild(tip);
+    tip.style.left = (rect.left - wrapRect.left + rect.width/2) + "px";
+    tip.style.top = (rect.top - wrapRect.top) + "px";
+  }
+  function hideTip(){ if (tip){ tip.remove(); tip = null; } }
+  wrap.querySelectorAll(".bar-fill").forEach(el=>{
+    el.addEventListener("pointerenter", ()=> showTip(el));
+    el.addEventListener("focus", ()=> showTip(el));
+    el.addEventListener("pointerleave", hideTip);
+    el.addEventListener("blur", hideTip);
+    el.addEventListener("click", ()=> showTip(el));
+  });
+}
+
+/* ---------------------------------------------------------------
+   RENDER DISPATCH
+--------------------------------------------------------------- */
+function renderView(resetScroll){
+  if (state.view==="home") renderHome(resetScroll);
+  else if (state.view==="guide") renderGuide();
+  else if (state.view==="triggers") renderTriggers();
+  else if (state.view==="insights") renderInsights();
+}
+
+function esc(str){
+  return String(str).replace(/[&<>"']/g, c=> ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+
+/* ---------------------------------------------------------------
+   INIT
+--------------------------------------------------------------- */
+applyLangDom();
+applyTheme();
+document.getElementById("view-title").textContent = t("title_"+state.view);
+document.getElementById("view-sub").textContent = t("sub_"+state.view);
+document.getElementById("lang-toggle").addEventListener("click", ()=>{
+  state.lang = state.lang === "en" ? "ar" : "en";
+  saveJSON(STORE_LANG, state.lang);
+  applyLangDom();
+  document.getElementById("view-title").textContent = t("title_"+state.view);
+  document.getElementById("view-sub").textContent = t("sub_"+state.view);
+  renderTabbar();
+  renderView(true);
+});
+document.getElementById("theme-toggle").addEventListener("click", ()=>{
+  const order = ["auto","light","dark"];
+  state.theme = order[(order.indexOf(state.theme)+1) % order.length];
+  saveJSON(STORE_THEME, state.theme);
+  applyTheme();
+});
+document.getElementById("home-fab").innerHTML = svg("plus");
+document.getElementById("home-fab").addEventListener("click", ()=> openEntryModal());
+renderTabbar();
+renderView();
+updateHomeFab();
+})();
+</script>
+</body>
+</html>
