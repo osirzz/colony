@@ -506,6 +506,7 @@ Gut guide · HTML
         <div class="sub" id="view-sub">Your daily food &amp; symptom tracker</div>
       </div>
       <div class="topbar-actions">
+        <button class="theme-switch" id="welcome-toggle" aria-label="Show welcome intro" style="font-weight:800;">?</button>
         <button class="theme-switch" id="theme-toggle" aria-label="Toggle color theme">🌗</button>
         <button class="lang-switch" id="lang-toggle">العربية</button>
       </div>
@@ -645,6 +646,7 @@ const I18N = { en:{
   welcome_step3_title:"Spot your patterns",
   welcome_step3_body:"Insights shows which foods tend to trigger flare-ups for you.",
   welcome_cta:"Let's get started",
+  welcome_noshow:"Don't show this automatically again",
   lang_toggle:"العربية"
 }, ar:{
   tab_home:"المتابعة اليومية", tab_guide:"الدليل", tab_triggers:"المحفزات", tab_diary:"اليوميات", tab_insights:"التحليلات", tab_tracked:"المتابَع",
@@ -742,6 +744,7 @@ const I18N = { en:{
   welcome_step3_title:"اكتشف أنماطك",
   welcome_step3_body:"تُظهر لك التحليلات الأطعمة التي تُحفّز أعراضك غالبًا.",
   welcome_cta:"لنبدأ",
+  welcome_noshow:"لا تعرض هذا تلقائيًا مرة أخرى",
   lang_toggle:"English"
 }};
 function t(key){ return (I18N[state.lang] && I18N[state.lang][key]) || I18N.en[key] || key; }
@@ -2301,10 +2304,14 @@ function openWelcomeModal(){
       + welcomeStep("📖", t("welcome_step2_title"), t("welcome_step2_body"), 2)
       + welcomeStep("📊", t("welcome_step3_title"), t("welcome_step3_body"), 3)
     + '</div>'
+    + '<label style="display:flex;align-items:center;gap:8px;margin:14px 2px 4px;font-size:12.5px;color:var(--text-secondary);cursor:pointer;">'
+      + '<input type="checkbox" id="welcome-noshow" style="width:auto;" checked>' + esc(t("welcome_noshow"))
+    + '</label>'
     + '<button class="btn block" id="welcome-start">'+esc(t("welcome_cta"))+'</button>'
     + '</div></div>';
   function dismiss(){
-    saveJSON(STORE_WELCOME, true);
+    const noshow = document.getElementById("welcome-noshow");
+    saveJSON(STORE_WELCOME, noshow ? noshow.checked : true);
     closeModal();
   }
   document.getElementById("welcome-start").addEventListener("click", dismiss);
@@ -2333,6 +2340,7 @@ document.getElementById("theme-toggle").addEventListener("click", ()=>{
   saveJSON(STORE_THEME, state.theme);
   applyTheme();
 });
+document.getElementById("welcome-toggle").addEventListener("click", ()=> openWelcomeModal());
 document.getElementById("home-fab").innerHTML = svg("plus");
 document.getElementById("home-fab").addEventListener("click", ()=> openEntryModal());
 renderTabbar();
